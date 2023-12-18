@@ -12,3 +12,6 @@ class APIData(models,Model):
     Subject = models.CharField(max_length=100)  #전공선택 수강과목은 여러개여서 배열,,,을 써야하는데 나중에 
 
 # Create your models here.
+class Startpage(models.Model):
+    def __str__(self):
+        return self.name
