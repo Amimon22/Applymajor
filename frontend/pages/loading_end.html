@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>loading</title>
+    <style>
+        .text{
+            color: var(--TEXT, #2C2C2C);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px; /* 183.333% */
+            position:absolute;
+            top:500px;
+            left:145px;
+            text-align: center;
+        }
+        .png1{
+            position:absolute;
+            top:200px;
+            left:115px;
+        }
+        .applyButton{
+            position:absolute;
+            top:600px;
+            left:170px;
+            width: 123px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: #7B61FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: center;
+            font-family: SF Pro;
+            font-size: 12px;
+            font-weight: 590;
+        }
+    </style>
+    <body>
+        <div class="png1">
+            <img src="../images/wink.png" alt="loading_end" width="230spx" height="230px">
+        </div>
+        <div class="text">
+            계산을 완료했어요.<br>
+            확인 버튼을 눌러주세요.
+        </div>
+        <div class="applyButton" onclick="handleButtonClick()">지원하기</div>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        </script>
+    </body>

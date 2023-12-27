@@ -9,3 +9,6 @@ class UserProfile(models.Model):
     certification = models.BooleanField(default=False) #인증여부 (불리언으로)
     
 # Create your models here.
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    auth = models.BooleanField(default=False) #인증 완료된 유저 구분

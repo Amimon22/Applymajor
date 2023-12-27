@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>지망 선택</title>
+    <style>
+    .container1{
+        position:absolute;
+        top:63px;
+        left:347px;
+    }
+
+    .container2{
+        position:absolute;
+        top:63px;
+        left:15.88px;
+    }
+
+    .h1{
+    color: var(--TEXT, #2C2C2C);
+    font-family: SF Pro Text;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px; /* 122.222% */
+    letter-spacing: -0.408px;
+    position:absolute;
+    top:63px;
+    left:159px;
+    }
+    .rounded-rectangle {
+      width: 170px;
+      height: 42px;
+      background-color: #7B61FF;
+      border-radius: 20px;
+      position:absolute;
+      top: 289px;
+      left: 110px;
+    }
+    .h2 {
+        color: var(--MAIN, #7B61FF);
+        position: absolute;
+        top: 130px;
+        left:42px;
+        font-family: SF Pro Text;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: -0.408px;
+    }
+    input[type="checkbox"] {
+        display: none; /* Hide the default checkbox */
+    }
+    .custom-checkbox {
+        margin-bottom: 8px;
+        position: relative;
+        left: 34px;
+        top:160px; /* Added margin to create space between checkboxes */
+    }
+    .custom-checkbox label {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        vertical-align: middle;
+        color: #2C2C2C;
+        font-size: 12px;
+        font-family: SF Pro Text;
+        font-weight: 600;
+        line-height: 22px;
+        word-wrap: break-word   
+    }
+    .custom-checkbox label::before {
+        content: '';
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: #EFEFEF;
+        position:relative;
+        vertical-align: middle;
+        top:7px;                                                                    
+        transform: translateY(-50%); */
+        transition: background 0.2s;
+    }
+    .custom-checkbox input:checked + label::before {
+        background-color: #7B61FF;
+        color: white;
+         /* Change text color when checked */
+    }
+    .rect1{
+        position:absolute;
+        background-color: #f8f8f8;
+        top: 270px;
+        left:35px;
+        width: 320px;
+        height: 1px;
+    }
+    select {
+    width: 302px;
+    max-height: 200px;
+    appearance: none; /* Remove default appearance */
+    padding: 10px; /* Add padding for visual appearance */
+    border: none;/* Add border for visual appearance */
+    background-color: #efefef; /* Set background color to white */
+    cursor: pointer; /* Change cursor to pointer */
+    transform: translate(-50%, -50%);
+    }
+
+    .h3 {
+        position: absolute;
+        top: 353px;
+        left:40px;
+        color: #7B61FF;
+        font-size: 16px;
+        font-family: SF Pro Text;
+        font-weight: 700;
+        line-height: 22px;
+        word-wrap: break-word   
+    }
+    .h4 {
+        position: absolute;
+        top: 466px;
+        left:40px;
+        color: #7B61FF;
+        font-size: 16px;
+        font-family: SF Pro Text;
+        font-weight: 700;
+        line-height: 22px;
+        word-wrap: break-word   
+    }
+    .h5 {
+        position: absolute;
+        top: 573px;
+        left:40px;
+        color: #7B61FF;
+        font-size: 16px;
+        font-family: SF Pro Text;
+        font-weight: 700;
+        line-height: 22px;
+        word-wrap: break-word   
+    }
+    .h6 {
+        position: absolute;
+        top: 680px;
+        left:40px;
+        color: #7B61FF;
+        font-size: 16px;
+        font-family: SF Pro Text;
+        font-weight: 700;
+        line-height: 22px;
+        word-wrap: break-word   
+    }
+    .global-text{
+        position: absolute;
+        top:300px;
+        left:147px;
+        color: #FFF;
+        text-align: center;
+        font-family: SF Pro Text;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 22px; /* 157.143% */
+        letter-spacing: -0.408px;
+    }
+    .science-text{
+        position: absolute;
+        top:300px;
+        left:153px;
+        color: #FFF;
+        text-align: center;
+        font-family: SF Pro Text;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 22px; /* 157.143% */
+        letter-spacing: -0.408px;
+    }
+    .art-text{
+        position: absolute;
+        top:300px;
+        left:144px;
+        color: #FFF;
+        text-align: center;
+        font-family: SF Pro Text;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 22px; /* 157.143% */
+        letter-spacing: -0.408px;
+    }
+    .text1{
+        position:absolute;
+        top:353px;
+        left: 40px;
+        color: var(--MAIN, #7B61FF);
+        font-family: SF Pro Text;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22px; /* 137.5% */
+        letter-spacing: -0.408px;
+    }
+    .text2{
+        position:absolute;
+        top:440px;
+        left: 40px;
+        color: var(--MAIN, #7B61FF);
+        font-family: SF Pro Text;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22px; /* 137.5% */
+        letter-spacing: -0.408px;
+    }
+    .text3{
+        position:absolute;
+        top:530px;
+        left: 40px;
+        color: var(--MAIN, #7B61FF);
+        font-family: SF Pro Text;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22px; /* 137.5% */
+        letter-spacing: -0.408px;
+    }
+    .text4{
+        position:absolute;
+        top:620px;
+        left: 40px;
+        color: var(--MAIN, #7B61FF);
+        font-family: SF Pro Text;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22px; /* 137.5% */
+        letter-spacing: -0.408px;
+    }
+    .rect2{
+        position:absolute;
+        background-color: #f8f8f8;
+        top: 430px;
+        left:35px;
+        width: 320px;
+        height: 1px;
+    }
+    .rect3{
+        position:absolute;
+        background-color: #f8f8f8;
+        top: 520px;
+        left:35px;
+        width: 320px;
+        height: 1px;
+    }
+    .rect4{
+        position:absolute;
+        background-color: #f8f8f8;
+        top: 610px;
+        left:35px;
+        width: 320px;
+        height: 1px;
+    }
+    .button{
+        width: 123px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #7B61FF;
+        display: flex;
+        position: absolute;
+        top:720px;
+        left:133px;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        cursor: pointer;
+        text-align: center;
+        font-family: SF Pro;
+        font-size: 12px;
+        font-weight: 590;
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+        <mask id="mask0_108_1664" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
+        <rect x="0.631348" width="23.635" height="24" style="position: relative"; style="left: 50px"; fill="#D9D9D9"/>
+        </mask>
+        <g mask="url(#mask0_108_1664)">
+        <path d="M3.58569 18V16H21.3119V18H3.58569ZM3.58569 13V11H21.3119V13H3.58569ZM3.58569 8V6H21.3119V8H3.58569Z" fill="#2C2C2C"/>
+        </g>
+        </svg>
+    </div>
+    <div class="container2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+        <mask id="mask0_108_1689" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
+          <rect x="0.877808" width="23.8168" height="24" fill="#D9D9D9"/>
+        </mask>
+        <g mask="url(#mask0_108_1689)">
+          <path d="M16.5132 22L6.66528 12L16.5132 2L18.2612 3.775L10.1613 12L18.2612 20.225L16.5132 22Z" fill="#2C2C2C"/>
+        </g>
+      </svg>
+    </div>
+    <div class="h1">지망 선택</div>
+    <div class="h2">1. 소속 대학을 선택하세요.</div>
+    <div class="custom-checkbox">
+        <input type='checkbox' id='global' name='department' value='global' onclick='checkOnlyOne(this)'/>
+        <label for='global'> 글로벌융합대학</label>
+    </div>
+    
+    <div class="custom-checkbox">
+        <input type='checkbox' id='science' name='department' value='science' onclick='checkOnlyOne(this)'/>
+        <label for='science'> 과학기술대학</label>
+    </div>
+
+    <div class="custom-checkbox">
+        <input type='checkbox' id='art' name='department' value='art' onclick='checkOnlyOne(this)'/>
+        <label for='art'> Art&Design대학</label>
+    </div>
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rounded-rectangle"></div>
+    <div class="global-text">글로벌융합대학</div>
+    <div class="science-text">과학기술대학</div>
+    <div class="art-text">Art&Design대학</div>
+    <div class="text1">1지망 전공을 선택하세요.</div>
+    <div class="text2">2지망 전공을 선택하세요.</div>
+    <div class="text3">3지망 전공을 선택하세요.</div>
+    <div class="text4">4지망 전공을 선택하세요.</div>
+    <div class="button" onclick="handleButtonClick()">지원하기</div>
+
+    <script src = choose.js></script>
+    <script>
+        function handleButtonClick() {
+        }
+    </script>
+</body>
+</html>
