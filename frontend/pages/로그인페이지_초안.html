@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- css 파일 불러오기 -->
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <title>lonin_page1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #EFEFEF;
+        }
+
+        article {
+            width: 390px;
+            height: 844px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <article>
+        <header class="header">
+            <div class="back-arrow">
+              <!-- 왼쪽 상단 화살표 아이콘 -->
+              <a href="이전페이지_링크"><img src="./arrow_back.svg" alt="Back"></a>
+            </div>
+            <div class="login">
+              <!-- 중앙 상단 로그인 글씨 -->
+              <span>로그인</span>
+            </div>
+            <div class="menu-icon">
+              <!-- 오른쪽 상단 햄버거바 아이콘 -->
+              <a href="링크_추가_페이지"><img src="./menu.svg" alt="Menu"></a>
+            </div>
+        </header>
+        <div class="memon">
+          <!-- 중앙 미몬이 사진 -->
+          <img src="./미몬이.png" alt="memon">
+        </div>
+        <form method="post" action="login_pcor.php">
+          <div class="input-container1">
+            <img src="./person.svg" alt="사람 아이콘" class="person_icon" />
+            <div class="separator"></div>
+            <input type="text" class="input-field1" placeholder="학번" />
+          </div>
+          <div class="input-container2">
+            <img src="./lock.svg" alt="자물쇠 아이콘" class="lock_icon" />
+            <div class="separator"></div>
+            <input id="number" class="input-field2" type="password" name="pass" placeholder="비밀번호"/>
+          </div>
+          <div class="input-container3">
+              <input id="c" class="input-submit" type="submit" value="LOGIN">
+          </div>
+      </form> 
+      <p class="notice-text">
+        회원이 아니신가요?
+        <a href="회원가입페이지URL" class="signup-link">회원가입</a>
+    </p>       
+    </article>
+</body>
+</html>

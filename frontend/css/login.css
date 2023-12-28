@@ -1,0 +1,248 @@
+/* login.css */
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-top: 47px;
+}
+  
+/* 왼쪽 상단 화살표 아이콘 스타일 */
+.back-arrow {
+    /* 이미지 크기 조정 */
+    width: 23.817px;
+    height: 24px;
+    flex-shrink: 0;
+    position: fixed; /* 스크롤시 고정 */
+    left: 15.88px;
+    right: 350.31px;
+    top: 63px;
+    bottom: 757px;
+    z-index: 1; /* 맨 앞 요소로 */
+}
+  
+/* 중앙 상단 로그인 글씨체 스타일 */
+.login {
+    /* 로그인 글씨체 스타일 설정 */
+    color: var(--TEXT, #2C2C2C);
+    font-family: SF Pro Text;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px; /* 122.222% */
+    letter-spacing: -0.408px;
+
+    position: fixed; /* 스크롤시 고정 */
+    left: 170px;
+    right: 171px;
+    top: 64px;
+    bottom: 758px;
+    z-index: 1; /* 맨 앞 요소로 */
+}
+  
+/* 오른쪽 상단 햄버거바 아이콘 스타일 */
+.menu-icon {
+    /* 이미지 크기 조정 */
+    width: 23.635px;
+    height: 24px;
+    flex-shrink: 0;
+    position: fixed; /* 스크롤시 고정 */
+    left: 347.63px;
+    right: 18.73px;
+    top: 63px;
+    bottom: 757px;
+    z-index: 1; /* 맨 앞 요소로 */
+}
+
+/* 중앙 미몬이 아이콘 */
+.memon {
+    /* 이미지 크기 조정 */
+    width: 116px;
+    height: 126px;
+    flex-shrink: 0;
+    position: absolute;
+    left: 137px;
+    right: 137px;
+    top: 125px;
+    bottom: 593px;
+}
+
+/* 학번 입력받는 네모상자*/
+.input-container1 {
+    position: absolute;
+    display: flex;
+    width: 319px;
+    height: 48px;
+    padding: 0px;
+    align-items: flex-start;
+    flex-shrink: 0px;
+    background-color: #efefef; /* 원하는 배경색으로 변경 */
+    border-radius: 18px; /* 둥근 모서리를 원하면 값을 조절 */
+    left: 35px;
+    right: 36px;
+    top: 266px;
+    bottom: 530px;
+}
+
+input[type="text"] {
+    padding-left: 62px; /* 아이콘의 크기와 여백을 고려하여 조정 */
+}
+
+/* 사람 아이콘*/
+.person_icon {
+    position: relative;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%); /* 도형과 수직으로 배치*/
+    width: 30.154px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+/*분리선*/
+.separator {
+    position: relative;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 28.018px;
+    background: #C8C8C8;
+}
+
+.input-field1 {
+    /* position: absolute;  */
+    border-radius: 18px;
+    width: 100%;
+    height: 100%;
+    /* padding: 12px 20px; */
+    margin: 0;
+    display: inline-block;
+    border: none;
+    background-color: #e5e5e5; /* 원하는 배경색으로 변경 */
+}
+
+/* 학번 입력 필드의 플레이스홀더 스타일 */
+.input-field1::placeholder {
+    color: #C8C8C8; /* 색상 변경 */
+    text-align: center; /* 정렬 방식 변경 */
+    font-family: "SF Pro", sans-serif; /* 폰트 변경 */
+    font-size: 16px; /* 폰트 크기 변경 */
+    font-style: normal; /* 폰트 스타일 변경 */
+    font-weight: 700; /* 두께 변경 */
+    line-height: 25px; /* 줄 간격 변경 */
+}
+
+.input-container2 {
+    position: absolute;
+    display: flex;
+    width: 319px;
+    height: 48px;
+    padding: 0px;
+    align-items: flex-start;
+    flex-shrink: 0px;
+    background-color: #efefef; /* 원하는 배경색으로 변경 */
+    border-radius: 18px; /* 둥근 모서리를 원하면 값을 조절 */
+    left: 35px;
+    right: 36px;
+    top: 329px;
+    bottom: 467px;
+}
+
+input[type="number"] {
+    padding-left: 62px; /* 아이콘의 크기와 여백을 고려하여 조정 */
+}
+
+/* 사람 아이콘*/
+.lock_icon {
+    position: relative;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%); /* 도형과 수직으로 배치*/
+    width: 30.154px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+
+.input-field2 {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    background-color: #f2f2f2; /* 원하는 배경색으로 변경 */
+}
+
+.input-submit {
+    position: absolute;
+    display: flex;
+    width: 319px;
+    height: 48px;
+    padding: 0px;
+    justify-content: center; /* 가로축 중앙 정렬 */
+    align-items: center; /* 세로축 중앙 정렬 */
+    flex-shrink: 0px;
+    background-color: #7b61ff; /* 원하는 배경색으로 변경 */
+    border-radius: 18px; /* 둥근 모서리를 원하면 값을 조절 */
+    cursor: pointer;
+    border: none;
+    text-align: center;
+
+    left: 35px;
+    right: 36px;
+    top: 392px;
+    bottom: 404px;
+
+    color: #FFF; /* 텍스트 색 */
+    font-family: "SF Pro"; /* 폰트 */
+    font-size: 18px; /* 폰트 크기 */
+    font-style: normal; /* 폰트 스타일 */
+    font-weight: 700; /* 폰트 두께 */
+    line-height: 25px; /* 줄 간격 */
+}
+
+
+.input-submit:hover {
+    background-color: #4731b8;
+}
+
+
+/* 비밀번호 입력 필드의 플레이스홀더 스타일 */
+.input-field2::placeholder {
+    color: #C8C8C8; /* 색상 변경 */
+    text-align: center; /* 정렬 방식 변경 */
+    font-family: "SF Pro", sans-serif; /* 폰트 변경 */
+    font-size: 16px; /* 폰트 크기 변경 */
+    font-style: normal; /* 폰트 스타일 변경 */
+    font-weight: 700; /* 두께 변경 */
+    line-height: 25px; /* 줄 간격 변경 */
+}
+
+.notice-text {
+    color: var(--2, #535353);
+    text-align: center;
+    font-family: 'SF Pro';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+
+    position: absolute;
+    left: 110px;
+    right: 110px;
+    top: 435px;
+    bottom: 374px;
+}
+
+.signup-link {
+    color: var(--2, #7B61FF);
+    font-family: 'SF Pro';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    text-decoration: none; /* 링크의 밑줄 제거 */
+}
