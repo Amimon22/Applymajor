@@ -6,27 +6,25 @@
     <title>메인페이지</title>
     <style>
         .img1{
-            display:flex;
-            top:252px;
-            left:110px;
-            flex-shrink: 0;
+            position:relative;
+            left:-40px;
+            top:50px;
         }
         .rect1{
             border-radius: 25px;
             background: var(--MAIN, #7B61FF);
-            position:relative;
+            position:absolute;
             width: 103px;
             height: 34px;
             padding: 6px 1px 6px 0px;
-            align-items: flex-start;
-            flex-shrink: 0;
             z-index: +1;
             left:25px;
+            top:471px;
         }
         .rect2{
         border-radius: 18px;
         background: #E9E9EB;
-        position:relative;
+        position:absolute;
         top:-20px;
         left:20px;
         width: 332px;
@@ -35,6 +33,7 @@
         align-items: flex-start;
         flex-shrink: 0;
         z-index: -1;
+        top:490px;
         }
         .h1{
             width: 57px;
@@ -46,8 +45,8 @@
             font-weight: 700;
             line-height: 25px; /* 147.059% */
             position:absolute;
-            top:420px;
-            left:57px;
+            top:482px;
+            left:50px;
             z-index:+2;
         }
         .h2{
@@ -59,13 +58,46 @@
             font-weight: 700;
             line-height: 25px; /* 147.059% */
             position:absolute;
-            top:490px;
-            left:40px;
+            top:550px;
+            left:30px;
+        }
+        .button1{
+        width: 60px;
+        height: 30px;
+        display: flex;
+        position: absolute;
+        top:650px;
+        left:20px;
+        align-items: center;
+        justify-content: center;
+        color: #7B61FF;
+        cursor: pointer;
+        text-align: center;
+        font-family: SF Pro;
+        font-size: 14px;
+        font-weight: 590;
+        }
+        .button2{
+        width: 60px;
+        height: 30px;
+        display: flex;
+        position: absolute;
+        top:650px;
+        left:290px;
+        align-items: center;
+        justify-content: center;
+        color: #7B61FF;
+        cursor: pointer;
+        text-align: center;
+        font-family: SF Pro;
+        font-size: 14px;
+        font-weight: 590;
         }
     </style>
     <body>
         <div class = img1>
-            <img src="../images/simple.png" alt="chat" width="400px" height="400px">
+            <lottie-player src="../js/exclamationMark.json" background="transparent" " speed="1" loop autoplay>
+            </lottie-player>
         </div>
         <div class = rect1>
         </div>
@@ -76,6 +108,21 @@
         </div>
         <div class = h2>
             나는 2070년에서 온 덕우인데,<br>
-            2024년에는 전공선택 제도라는게 있다며?
+            2024년에는 전공선택 제도라는 게 있다며?
         </div>
+        <div class="button1" onclick="handleButtonClick1()"><이전</div>
+        <div class="button2" onclick="handleButtonClick2()">다음></div>
+        <script>
+            function handleButtonClick1() {
+                window.location.href = "../pages/chating_page_ver1.html";
+        }
+            function handleButtonClick2() {
+        }
+        </script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        </script>
+        
     </body>
+    
+
+ 
