@@ -1,12 +1,328 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>메인페이지</title>
-</head>
-<body>
-    임시로 만든 메인
+    <style>
+    @keyframes appear{
+    from {
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+    }
+
+    @keyframes appear_from_bottom{
+    0%{
+        transform: translateY(150px);
+        opacity: 0;
+     }
+
+    100%{
+        opacity: 1;
+    }
+    }
+
+        .h1 {
+        color: #383838;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: SF Pro;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 590;
+        position:absolute;
+        top:369px;
+        left:54px;
+        width: 360px;
+        line-height: 1.7;
+        display: none;
+        animation: appear ease-out 2.5s;
+
+        span {
+            color: #7B61FF; /* 변경할 색상을 지정합니다. */
+            }
+        }
+        .h2{
+        position:absolute;
+        top:501px;
+        left:265px;
+        color: #8B8B8B;
+        text-align: center;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: SF Pro;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 590;
+        line-height: 33px; /* 275% */
+        text-decoration-line: underline;
+        display: none;
+        animation: appear ease-out 2.5s;
+        }
+        .h3{
+            span {
+            color: #7B61FF; /* 변경할 색상을 지정합니다. */
+            }
+            h1{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:1150px;
+            left:35px;
+            }
+            h2{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:1180px;
+            left:32px;    
+            }
+            h3{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:1235px;
+            left:32px;        
+            }
+            h4{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:1260px;
+            left:32px;        
+            }
+        animation: appear_from_bottom ease 2s;
+        }
+        .h4{
+            span {
+            color: #7B61FF; /* 변경할 색상을 지정합니다. */
+            }
+            h1{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:2050px;
+            left:35px;
+            }
+            h2{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:2080px;
+            left:32px;    
+            }
+            h3{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:2135px;
+            left:32px;        
+            }
+            h4{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:2160px;
+            left:32px;        
+            }
+        animation: appear ease-out 2.5s;
+        }
+        .char{
+        scale:100%;
+        position:absolute;
+        top:2247px;
+        left:350px;
+        transform: rotate(15deg);
+        animation: appear ease-out 2.5s;
+        }
+        .logo{
+            position:absolute;
+            top:2942px;
+            left: 130px;
+            animation: appear ease-out 2.5s;
+        }
+        .loginButton{
+            position:absolute;
+            top:3132px;
+            left:160px;
+            width: 123px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: #7B61FF;
+            /*display: flex;*/
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: center;
+            font-family: SF Pro;
+            font-size: 12px;
+            font-weight: 590;
+            display: none;
+            animation: appear ease-out 2.5s;
+        }
+        .calButton{
+            position:absolute;
+            top:3182px;
+            left:160px;
+            width: 123px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: #7B61FF;
+           /*display: flex;*/
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: center;
+            font-family: SF Pro;
+            font-size: 12px;
+            font-weight: 590;
+            display: none;
+            animation: appear ease-out 2s;
+        }
+        .applyButton{
+            position:absolute;
+            top:3232px;
+            left:160px;
+            width: 123px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: #7B61FF;
+            /*display: flex;*/
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: center;
+            font-family: SF Pro;
+            font-size: 12px;
+            font-weight: 590;
+            display: none;
+            animation: appear ease-out 2s;
+        }
+        .mypageButton{
+            position:absolute;
+            top:3282px;
+            left:160px;
+            width: 123px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: #7B61FF;
+            /*display: flex;*/
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: center;
+            font-family: SF Pro;
+            font-size: 12px;
+            font-weight: 590;
+            display: none;
+            animation: appear ease-out 2s;
+        }
+        .page{
+            position:absolute;
+            top:3320px;
+            left:160px;
+            width:123px;
+            height:200px;
+            background-color:white;
+        }
+        .style{
+            display: none;
+        }
+        </style>
+        </head>
+        <body>
+    <div class="h1">
+        안녕하세요!<br>
+        <span>A-Fly</span>에 방문하신 것을 환영합니다.<br>
+        먼저 저희 서비스를 소개할게요.<br>
+        하단으로 스크롤을 내려주세요.
+    </div>
+    <div style="text-align: center;">
+        <a href="#h2" class="skip-button" onfocus="this.blur()" style="text-decoration:none; color:black;">
+        <div class="h2" align="center" style="font-size:15px; font-weight:bold; 
+        height:auto;">
+        소개 건너뛰기</div>
+        </a>
+
+        </div> 
+    </div>
+	<div style="position:absolute; top:121px; left: 186px; scale: 150%;">
+    <lottie-player src="../js/main.json" background="transparent" style="width: 300px; height: 225px;" speed="1" loop autoplay>
+    </lottie-player>
+    </div>
+    <div class="h3">
+        <h1><span>A-fly</span>는 제1전공 선택 시 <span>점수 계산</span> 및 </h1>
+        <h2><span>모의 지원 결과</span>를 도출할 수 있는 서비스입니다.</h2>
+        <h3>덕성여자대학교 학우들에게 도움이 되는 </h3>
+        <h4>서비스를 개발하자는 아이디어에서 출발했습니다.</h4>    
+    </div>
+    <div class="h4">
+        <h1><span>A-fly</span>를 통해 학우 여러분께서 원활한 전공 지원을</h1>
+        <h2>하실 수 있기를 바랍니다.</h2>
+        <h3>해당 웹 서비스는 ‘아미몬’ 이라는</h3>
+        <h4>23년도 ICAN Membership 프로젝트 팀이 개발했습니다.</h4>
+       </div>
+       <div class="char"> 
+       <img src="../images/pencil.png" alt="이미지 설명" width="97px" height="84px">
+        </div>
+        <div class="logo" id="home">
+        <img src="../images/logo.png" alt="이미지 설명" width="200px" height="100px">
+        </div>
+    <div class="loginButton" onclick="handleButtonClick()">로그인</div>
+    <div class="calButton" onclick="handleButtonClick()">점수 계산</div>
+    <div class="applyButton" onclick="handleButtonClick()">모의 지원</div>
+    <div class="mypageButton" onclick="handleButtonClick()">마이페이지</div>
+    <div class="page">
+    </div>
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+    </script>
+    <script src = ../js/main.js></script>
 </body>
 </html>

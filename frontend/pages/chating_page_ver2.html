@@ -59,9 +59,25 @@
             line-height: 25px; /* 147.059% */
             position:absolute;
             top:550px;
-            left:70px;
+            left:30px;
         }
-        .button{
+        .button1{
+        width: 60px;
+        height: 30px;
+        display: flex;
+        position: absolute;
+        top:650px;
+        left:20px;
+        align-items: center;
+        justify-content: center;
+        color: #7B61FF;
+        cursor: pointer;
+        text-align: center;
+        font-family: SF Pro;
+        font-size: 14px;
+        font-weight: 590;
+        }
+        .button2{
         width: 60px;
         height: 30px;
         display: flex;
@@ -80,27 +96,33 @@
     </style>
     <body>
         <div class = img1>
-            <lottie-player src="../js/appear.json" background="transparent" " speed="1" loop autoplay>
+            <lottie-player src="../js/exclamationMark.json" background="transparent" " speed="1" loop autoplay>
             </lottie-player>
-        </div>
         </div>
         <div class = rect1>
         </div>
         <div class = rect2>
         </div>
         <div class = h1>
-            ???
+            미몬
         </div>
         <div class = h2>
-            안녕! 이제야 정식으로 인사하네.<br>
-            내 이름은 ‘미몬’이야.
+            나는 2070년에서 온 덕우인데,<br>
+            2024년에는 전공선택 제도라는 게 있다며?
         </div>
-        <div class="button" onclick="handleButtonClick()">다음></div>
+        <div class="button1" onclick="handleButtonClick1()"><이전</div>
+        <div class="button2" onclick="handleButtonClick2()">다음></div>
         <script>
-            function handleButtonClick() {
-                window.location.href = "../pages/chating_page_ver2.html";
+            function handleButtonClick1() {
+                window.location.href = "../pages/chating_page_ver1.html";
+        }
+            function handleButtonClick2() {
         }
         </script>
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         </script>
+        
     </body>
+    
+
+ 
