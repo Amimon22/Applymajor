@@ -53,7 +53,7 @@
     right: 18.73px;
     top: 63px;
     bottom: 757px;
-    z-index: 1; /* 맨 앞 요소로 */
+    z-index: 3; /* 맨 앞 요소로 */
 }
 
 /* 상단 미몬이 아이콘 */
