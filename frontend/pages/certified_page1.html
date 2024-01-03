@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- css 파일 불러오기 -->
+    <link rel="stylesheet" type="text/css" href="certified1.css">
+    <title>certified_page1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #EFEFEF;
+        }
+
+        article {
+            width: 390px;
+            height: 844px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <article>
+        <header class="header">
+            <div class="back-arrow">
+                <a href="이전페이지_링크">
+                    <img src="./arrow_back.svg" alt="Back">
+                </a>
+            </div>
+        </header>
+        <div class="gray-box">
+            <div class="header-section">
+                <div class="certified-badge">
+                    <span>학적정보</span>
+                </div>
+                <h1 class="title">사진 인증 안내</h1>
+            </div>
+            <p class="description1">덕성포털 > 통합정보시스템 > 학적 > 개인정보변경/지도교수확인
+                <br>에서 학적정보를 캡쳐해서 준비해주세요.</p>
+            <img src="certified_ex1.png" alt="안내사진" class="guide-image">
+            <p class="description2">위에서 강조표시한 학번, 학적상태, 학년(학기)가 확실하게 보이도록 
+                <br>캡쳐해주셔야 제대로 인증이 가능합니다.</p>
+            <div class="upload-box">
+                <label for="photo-upload">
+                    <img src="add_circle.svg" alt="Add" class="add-icon">
+                </label>
+                <input type="file" id="photo-upload" class="photo-upload">
+            </div> 
+            <form id="upload-form">
+                <input type="file" id="photo-upload" class="photo-upload">
+                <button type="submit" class="submit-btn custom-btn">사진 인증 하기</button>
+            </form>            
+        </div>
+    </article>  
+    <script src="certified.js"></script>
+</body>
+</html>
