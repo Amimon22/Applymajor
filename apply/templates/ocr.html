@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ocr</title>
+</head>
+<body>
+    <h1>OCR test</h1>
+    <form action="" method="post" id="ocrform" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="uploadfile" id="uploadfile"/>
+    </form>
+
+    <div>
+        <button onclick="uploadFile()">read</button>
+    </div>
+
+    <div>
+        <table>
+            <tr>
+                <td>
+                    {% if imgname == ''%}
+                    이미지를 read해주세요
+                    {% else %}
+                    <img src="{% static 'source/' %}{{ imgname }}" alt="">
+                    {{imgname}}
+                    {% endif %}
+                </td>
+                <td>
+                    <pre>
+                        {{resulttext}}
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function uploadFile() {
+            document.getElementById('ocrform').submit();
+        }
+    </script>
+</body>
+</html>
