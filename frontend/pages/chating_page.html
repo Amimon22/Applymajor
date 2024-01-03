@@ -26,6 +26,12 @@
             left: 0;
         }
 
+        #hamFrame {
+            width: 100%; /* 가로 크기를 최대로 설정 */
+            height: 100vh; /* 세로 크기를 뷰포트의 높이만큼 설정 */
+            z-index: 2;
+        }
+
         .memon_chat1, .user_chat1, .memon_chat2, .user_chat2, .memon_chat3, .user_chat3 {
             opacity: 0;
             transition: opacity 1s ease-out;
@@ -59,10 +65,23 @@
               <!-- 중앙 상단 로그인 글씨 -->
               <span>회원가입</span>
             </div>
-            <div class="menu-icon">
-              <!-- 오른쪽 상단 햄버거바 아이콘 -->
-              <a href="링크_추가_페이지"><img src="../images/menu.svg" alt="Menu"></a>
+            <div class="menu-icon" onclick="toggleDrawer()">
+                <img src="../images/menu.svg" alt="Menu">
             </div>
+            
+            <!-- 햄버거 바 내용을 표시할 오버레이 -->
+            <div id="overlay"></div>
+            
+            <!-- ham.html의 내용을 불러옴 -->
+            <iframe src="ham.html" frameborder="0" id="hamFrame"></iframe>
+            
+            <!-- 스크립트 부분 -->
+            <script>
+                function toggleDrawer() {
+                    // hamFrame 내부의 toggleDrawer 함수 호출
+                    document.getElementById('hamFrame').contentWindow.toggleDrawer();
+                }
+            </script>
         </header>
         <div class="memon">
             <!-- 상단 미몬이 사진 -->
