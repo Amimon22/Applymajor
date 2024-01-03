@@ -59,6 +59,7 @@
 /* 상단 미몬이 아이콘 */
 .memon {
     /* 이미지 크기 조정 */
+    display: flex;
     width: 109px;
     height: 109px;
     flex-shrink: 0;
