@@ -53,15 +53,14 @@ const h3Text = document.querySelector('.h3')
 
 let observer1 = new IntersectionObserver(entries=>{
   observer1cb(entries[0])
-},{root: null,threshold:0.8})
+},{root: null,threshold:0.5})
 const observer1cb = entry=>{
 if(entry.isIntersecting){
   setTimeout(()=>{
-      h3Text.style.display = "block"
+      h3Text.style.display = "flex"
       h3Text.style.opacity = 1
       h3Text.style.animation = `appear_from_bottom ease 2s`
       },800)
-
   // 화면에 시간간격마다 차례대로 화면에 요소를 띄움, 띄어지는 요소는 CSS animation 이 걸려있어서 부드럽게 동작
 }
 }
@@ -72,20 +71,19 @@ const h4Png = document.querySelector('.char')
 
 let observer2 = new IntersectionObserver(entries=>{
   observer2cb(entries[0])
-},{root: null,threshold:0.8})
+},{threshold:0.5})
 const observer2cb = entry=>{
 if(entry.isIntersecting){
   setTimeout(()=>{
-      h4Text.style.display = "block"
+      h4Text.style.display = "flex"
       h4Text.style.opacity = 1
       h4Text.style.animation = `appear_from_bottom ease 2s`
       },600)
       setTimeout(()=>{
-        h4Png.style.display = "block"
+        h4Png.style.display = "flex"
         h4Png.style.opacity = 1
         h4Png.style.animation = `appear_from_bottom ease 2s`
         },600)
-
   // 화면에 시간간격마다 차례대로 화면에 요소를 띄움, 띄어지는 요소는 CSS animation 이 걸려있어서 부드럽게 동작
 }
 }
@@ -122,4 +120,6 @@ if(entry.isIntersecting){
 }
 }
 observer3.observe(logo)
+
+
 
