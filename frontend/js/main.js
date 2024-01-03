@@ -120,3 +120,6 @@ if(entry.isIntersecting){
 }
 }
 observer3.observe(logo)
+
+
+
