@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>메인페이지</title>
+    <style>
+        .img1{
+            position:relative;
+            left:-40px;
+            top:50px;
+        }
+        .rect1{
+            border-radius: 25px;
+            background: var(--MAIN, #7B61FF);
+            position:absolute;
+            width: 103px;
+            height: 34px;
+            padding: 6px 1px 6px 0px;
+            z-index: +1;
+            left:25px;
+            top:471px;
+        }
+        .rect2{
+        border-radius: 18px;
+        background: #E9E9EB;
+        position:absolute;
+        top:-20px;
+        left:20px;
+        width: 332px;
+        height: 145px;
+        padding: 6px 1px 6px 1px;
+        align-items: flex-start;
+        flex-shrink: 0;
+        z-index: -1;
+        top:490px;
+        }
+        .h1{
+            width: 57px;
+            color: #FFF;
+            text-align: center;
+            font-family: SF Pro;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 25px; /* 147.059% */
+            position:absolute;
+            top:482px;
+            left:50px;
+            z-index:+2;
+        }
+        .h2{
+            color: var(--2, #535353);
+            text-align: center;
+            font-family: SF Pro;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 25px; /* 147.059% */
+            position:absolute;
+            top:550px;
+            left:50px;
+        }
+        .button{
+        width: 60px;
+        height: 30px;
+        display: flex;
+        position: absolute;
+        top:650px;
+        left:290px;
+        align-items: center;
+        justify-content: center;
+        color: #7B61FF;
+        cursor: pointer;
+        text-align: center;
+        font-family: SF Pro;
+        font-size: 14px;
+        font-weight: 590;
+        }
+    </style>
+    <body>
+        <div class = img1>
+            <img src="../images/simple.png" alt="chat" width="480px" height="480px">
+        </div>
+        <div class = rect1>
+        </div>
+        <div class = rect2>
+        </div>
+        <div class = h1>
+            미몬
+        </div>
+        <div class = h2>
+            좋아! 이제 모의지원 전 마지막 단계로<br>
+            사진 인증과 지망 선택만 남았어!
+        </div>
+        <div class="button" onclick="handleButtonClick()">다음></div>
+        <script>
+            function handleButtonClick() {
+                window.location.href = "../pages/certified_page_2.html";
+        }
+        </script>
+    </body>
