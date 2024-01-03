@@ -2,13 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>drawer</title>
+        <title>ResultPage</title>
         <style>
             body {
                 background-color : #FFF;
-                margin: 5px;
-                padding-bottom: 4px;
-                font-family: SF Pro Text;
+                font-family: SF Pro;
             }
             header { 
                 position : absolute;
@@ -16,11 +14,11 @@
                 background-color : #FFF;
                 width: 390px;
                 height: 56px;
-                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05); 
+                /*box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05); */
             }
             strong {
                 position : absolute;
-                top: 17px; left: 160px;
+                top: 17px; left: 139.92px;
                 color: #2C2C2C;
                 text-align: center;
                 font-family: SF Pro Text;
@@ -47,48 +45,6 @@
                 margin: 6px 0;
                 transition: 0.4s;
             }
-            #bold {
-                position: absolute;
-                top : 605px; 
-                left : 144px;
-                color: #535353;
-                font-family: SF Pro Text;
-                font-size: 13px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 27.5px;
-                letter-spacing: -0.408px;
-                text-decoration-line: underline;
-            }
-            #normal {
-                position: absolute;
-                top : 644px; 
-                left : 65px;
-                color: #535353;
-                text-align: center;
-                font-family: SF Pro Text;
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 300;
-                line-height: 22px;
-                letter-spacing: -0.408px;
-            }
-            #exp {
-                position: absolute;
-                top : 727px; 
-                left : 45px;
-                color: #C8C8C8;
-                font-family: SF Pro Text;
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 300;
-                line-height: 22px;
-                letter-spacing: -0.408px;
-            }
-            button {
-                position: absolute;
-                top : 773px; left : 133.29px;
-            }
             .overlay {
                 display: none;
                 position: fixed;
@@ -105,7 +61,7 @@
                 width: 0;
                 z-index: 2;
                 top: 0px;
-                right: 276px;
+                right: 50px;
                 background-color: #FFF;
                 overflow-x: hidden;
                 transition: 0.5s;
@@ -167,10 +123,6 @@
                 line-height: 0px;
                 padding: 0;
             }
-            p {
-                padding: 0%;
-                margin: 0;
-            }
             #go {
                 position: absolute;
                 right: 47px;
@@ -180,7 +132,7 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: 22px;
-                transition: 0.3s;
+                transition: 0.5s;
                 display: inline-block;
             }
             #go-icon1 {
@@ -201,14 +153,148 @@
             #menu-cal {
                 position: absolute;
                 top: 195px; left: 29px;
-                padding-top: 4%;
-                padding-bottom: 8%;
+                margin-top: 4%;
             }
             #menu-apply {
                 position: absolute;
                 top: 255px; left: 29px;
-                padding-top: 5%;
-                padding-bottom: 8%;
+            }
+            .Rectangle {
+                position: absolute;
+                width: 327px;
+                display: inline-block;
+                border-radius: 25px;
+                border: 4px solid #BCAFFF;
+                background: #FFF;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+            #Rectangle1 {
+                position: absolute;
+                top: 112px; left: 32px;
+                height: 279px;
+            }
+            #Number {
+                position: absolute;
+                top: 275px; left: 79px;
+                color: #535353;
+                font-style: normal;
+                font-size: 18px;
+                text-align: center;
+                font-weight: 590;
+                line-height: 37.5px;
+            }
+            #score {
+                position: absolute;
+                top: 315px; left: 164px;
+                color: #7B61FF;
+                text-align: center;
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 37.5px;
+            }
+            #myinfo {
+                top: 427px; left: 39px;
+                color: #2C2C2C;
+                letter-spacing: -0.408px;
+                position: absolute;
+                font-style: normal;
+                font-size: 18px;
+                text-align: center;
+                font-weight: 590;
+                line-height: 22px;
+                display: inline-block;
+            }
+            #Rectangle2 {
+                position: absolute;
+                top: 462px; left: 32px;
+                height: 310px;
+            }
+            #change {
+                position: absolute;
+                top: 132px; left: 320px;
+                width: 30px;
+                height: 28px;
+                color: #535353;
+            }
+            #restart {
+                position: absolute;
+                top: 425px; left: 197px;
+                width: 24px;
+                height: 24px;
+                color: #AAAAAA;
+            }
+            .apply {
+                position: absolute;
+                color: #2C2C2C;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 590;
+                line-height: 22px;
+                display: inline-block;
+            }
+            #firstapply {
+                top: 487px; left: 58px;
+            }
+            #secondapply {
+                top: 550px; left: 58px;
+            }
+            #thirdapply {
+                top: 623px; left: 58px;
+            }
+            #fourthapply {
+                top: 698px; left: 58px;
+            }
+            .text16 {
+                position: absolute;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 590;
+                line-height: 22px;
+                padding-right: 4%;
+            }
+            #firstMajor {
+                color: #7B61FF;
+                top: 487px; left: 114px;
+            }
+            .Major {
+                position: absolute;
+                color: #9581FF;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 590;
+                line-height: 22px;
+            }
+            #secondMajor {
+                top: 550px; left: 114px;
+            }
+            #thirdMajor {
+                top: 624px; left: 114px;
+            }
+            #fourthMajor {
+                top: 699px; left: 114px;
+            }
+            #firstRank {
+                position: absolute;
+                top: 486px; left: 295px;
+                color: #2C2C2C;
+            }
+            .Rank {
+                position: absolute;
+                color: #535353;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 590;
+                line-height: 22px;
+            }
+            #secondRank {
+                top: 551px; left: 293px;
+            }
+            #thirdRank {
+                top: 624px; left: 293px;
+            }
+            #fourthRank {
+                top: 699px; left: 293px;
             }
         </style>
     </head>
@@ -222,7 +308,7 @@
                 <path d="M16.5132 22L6.66528 12L16.5132 2L18.2612 3.775L10.1613 12L18.2612 20.225L16.5132 22Z" fill="#2C2C2C"/>
                 </g>
                 </svg></span>
-            <strong>지망 변경</strong>
+            <strong>모의지원 결과</strong>
             <div class="menu-icon" onclick="toggleDrawer()"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                 <mask id="mask0_108_1774" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
                   <rect width="23.635" height="24" fill="#D9D9D9"/>
@@ -285,11 +371,35 @@
                 </g>
               </svg></p></a>
         </div>
-        <p id="bold">남은 지원 횟수 : n회</p>
-        <p id="normal">지원 횟수를 모두 사용하면 더 이상 변경할 수 없습니다.<br>
-            선택지를 다시 한 번 확인하시고<br>신중하게 결정하세요!</p>
-        <p id="exp">＊이전 등수는 1지망에 한해 마이페이지에서 확인 가능합니다＊<br><br><br><br><br></p>
-        <form><button type="submit">변경하기</button></form>
+        <div id="Rectangle1" class="Rectangle"></div>
+        <div id="Number">20230000 님의 모의지원 점수</div>
+        <div id="score">966점</div>
+        <div id="myinfo">나의 모의지원 현황</div>
+        <div id="Rectangle2" class="Rectangle"></div>
+        <div id="change"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" fill="none">
+            <path d="M6.375 18.7251C5.91667 17.9862 5.57292 17.2279 5.34375 16.4501C5.11458 15.6723 5 14.8751 5 14.0584C5 11.4529 5.96875 9.23619 7.90625 7.40842C9.84375 5.58064 12.2083 4.66675 15 4.66675H15.2188L13.2188 2.80008L14.9688 1.16675L19.9688 5.83342L14.9688 10.5001L13.2188 8.86675L15.2188 7.00008H15C12.9167 7.00008 11.1458 7.6855 9.6875 9.05633C8.22917 10.4272 7.5 12.0945 7.5 14.0584C7.5 14.564 7.5625 15.0598 7.6875 15.5459C7.8125 16.032 8 16.5084 8.25 16.9751L6.375 18.7251ZM15.0313 26.8334L10.0313 22.1667L15.0313 17.5001L16.7813 19.1334L14.7813 21.0001H15C17.0833 21.0001 18.8542 20.3147 20.3125 18.9438C21.7708 17.573 22.5 15.9056 22.5 13.9417C22.5 13.4362 22.4375 12.9404 22.3125 12.4542C22.1875 11.9681 22 11.4917 21.75 11.0251L23.625 9.27508C24.0833 10.014 24.4271 10.7723 24.6563 11.5501C24.8854 12.3279 25 13.1251 25 13.9417C25 16.5473 24.0313 18.764 22.0938 20.5917C20.1563 22.4195 17.7917 23.3334 15 23.3334H14.7813L16.7813 25.2001L15.0313 26.8334Z" fill="#535353"/>
+          </svg></div>
+        <div id="restart"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <mask id="mask0_184_1917" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+              <rect width="24" height="24" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_184_1917)">
+              <path d="M12.05 20C9.81667 20 7.91667 19.225 6.35 17.675C4.78333 16.125 4 14.2333 4 12V11.825L2.4 13.425L1 12.025L5 8.025L9 12.025L7.6 13.425L6 11.825V12C6 13.6667 6.5875 15.0833 7.7625 16.25C8.9375 17.4167 10.3667 18 12.05 18C12.4833 18 12.9083 17.95 13.325 17.85C13.7417 17.75 14.15 17.6 14.55 17.4L16.05 18.9C15.4167 19.2667 14.7667 19.5417 14.1 19.725C13.4333 19.9083 12.75 20 12.05 20ZM19 15.975L15 11.975L16.4 10.575L18 12.175V12C18 10.3333 17.4125 8.91667 16.2375 7.75C15.0625 6.58333 13.6333 6 11.95 6C11.5167 6 11.0917 6.05 10.675 6.15C10.2583 6.25 9.85 6.4 9.45 6.6L7.95 5.1C8.58333 4.73333 9.23333 4.45833 9.9 4.275C10.5667 4.09167 11.25 4 11.95 4C14.1833 4 16.0833 4.775 17.65 6.325C19.2167 7.875 20 9.76667 20 12V12.175L21.6 10.575L23 11.975L19 15.975Z" fill="#AAAAAA"/>
+            </g>
+          </svg></div>
+
+        <div id="firstapply" class="apply">1지망</div>
+        <div id="secondapply" class="apply">2지망</div>
+        <div id="thirdapply" class="apply">3지망</div>
+        <div id="fourthapply" class="apply">4지망</div>
+        <div id="firstMajor" class="text16">디지털소프트웨어공학전공</div>
+        <div id="secondMajor" class="Major">바이오공학전공</div>
+        <div id="thirdMajor" class="Major">식품영양학전공</div>
+        <div id="fourthMajor" class="Major">화학전공</div>
+        <div id="firstRank" class="text16">12등</div>
+        <div id="secondRank" class="Rank">혼잡</div>
+        <div id="thirdRank" class="Rank"> 보통</div>
+        <div id="fourthRank" class="Rank">여유</div>
         <script>
             function toggleDrawer() {
                 var drawer = document.getElementById('drawer');

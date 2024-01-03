@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Afly</title>
+        <title>PasswordChange</title>
         <style>
             body {
                 background-color : #FFF;
@@ -16,7 +16,7 @@
                 background-color : #FFF;
                 width: 390px;
                 height: 56px;
-                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05); 
+                /*box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05); */
             }
             strong {
                 position : absolute;
@@ -26,7 +26,7 @@
                 font-family: SF Pro Text;
                 font-size: 18px;
                 letter-spacing: -0.408px;
-            }
+            } 
             #m1 {
                 position : absolute;
                 top: 17px; left: 15.88px;
@@ -47,96 +47,47 @@
                 margin: 6px 0;
                 transition: 0.4s;
             }
-            .list_style {
-                position : absolute;
-                width: 227px;
-                color : #7B61FF;
-                font-family: SF Pro Text Bold;
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 22px; /* 137.5% */
-                letter-spacing: -0.408px;
-                width: 318px;
-            }
-            #list1 {
-                top: 130px;
-            }
-            #list2 {
-                top: 280px;
-            }
-            #list3 {
-                top: 423px;
-            }
-            #list4 {
-                top: 576px;
-            }
-            #list5 {
-                top: 694px;
-            }
-            p { 
-                position : absolute;
-                left: 44px;
-                margin: 7px;
-                padding-top: 0px;
-                color : #525252;
-                font-family: SF Pro Text;
-                font-size: 10px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 22px;
-                letter-spacing: -0.408px;
-            }
-            .ex {
+            #bold {
+                position: absolute;
+                top : 605px; 
+                left : 144px;
                 color: #535353;
                 font-family: SF Pro Text;
-                font-size: 10px;
+                font-size: 13px;
                 font-style: normal;
                 font-weight: 600;
-                line-height: 22px;
+                line-height: 27.5px;
                 letter-spacing: -0.408px;
+                text-decoration-line: underline;
             }
-            #ex1 {
-                top : 156px;
-            }
-            #ex2 {
-                top : 307px;
-            }
-            #ex3 {
-                top : 450px;
-            }
-            .value {
-                position : absolute;
-                width: 300px;
-                left: 46px;
-                color: #2C2C2C;
+            #normal {
+                position: absolute;
+                top : 644px; 
+                left : 65px;
+                color: #535353;
+                text-align: center;
                 font-family: SF Pro Text;
                 font-size: 12px;
                 font-style: normal;
-                font-weight: 600;
+                font-weight: 300;
+                line-height: 22px;
                 letter-spacing: -0.408px;
             }
-            #value1 {
-                top : 186px;
-            }
-            #value2 {
-                top : 337px;
-            }
-            #value3 {
-                top : 481px;
-            }
-            #value4 {
-                top : 608px;
-            }
-            #value5 {
-                top : 727px;
-            }
-            #color {
-                color : #7B61FF;
+            #exp {
+                position: absolute;
+                top : 727px; 
+                left : 45px;
+                color: #C8C8C8;
+                font-family: SF Pro Text;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 22px;
+                letter-spacing: -0.408px;
             }
             button {
                 position: absolute;
-                top : 800px; left : 133.29px;
+                top : 773px; left : 133.29px;
             }
             .overlay {
                 display: none;
@@ -154,7 +105,7 @@
                 width: 0;
                 z-index: 2;
                 top: 0px;
-                right: 276px;
+                right: 50px;
                 background-color: #FFF;
                 overflow-x: hidden;
                 transition: 0.5s;
@@ -199,10 +150,11 @@
                 top: 147.33px; left: 30.33px;
                 color: #535353;
                 font-family: SF Pro;
-                font-size: 18px;
+                font-size: 12px;
                 font-style: normal;
-                font-weight: 510;
+                font-weight: 400;
                 line-height: 22px;
+                padding: 0;
             }
             #main {
                 position: absolute;
@@ -215,6 +167,10 @@
                 line-height: 0px;
                 padding: 0;
             }
+            p {
+                padding: 0%;
+                margin: 0;
+            }
             #go {
                 position: absolute;
                 right: 47px;
@@ -224,7 +180,7 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: 22px;
-                transition: 0.3s;
+                transition: 0.5s;
                 display: inline-block;
             }
             #go-icon1 {
@@ -266,7 +222,7 @@
                 <path d="M16.5132 22L6.66528 12L16.5132 2L18.2612 3.775L10.1613 12L18.2612 20.225L16.5132 22Z" fill="#2C2C2C"/>
                 </g>
                 </svg></span>
-            <strong>성적 정보 입력</strong>
+            <strong>지망 변경</strong>
             <div class="menu-icon" onclick="toggleDrawer()"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                 <mask id="mask0_108_1774" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
                   <rect width="23.635" height="24" fill="#D9D9D9"/>
@@ -280,36 +236,7 @@
               <div></div>
             </div>
         </header>
-        <br>
-        <p id="list1", class="list_style">1. 전공탐색 과목 이수 여부</p><br>
-        <p id="ex1", class = "ex">선택하고자 하는 전공의 전공탐색 과목의 이수 여부</p><br>
-        <form><p id="value1", class="value">
-            <input type = "radio" name="yon" value="1">이수하였습니다.<br>
-            <input type = "radio" name="yon" value="2">이수하지 않았습니다.<br><br><br>
-        </p></form>
-        <p id="list2", class="list_style">2. 비교과 활동 점수</p><br>
-        <p id="ex2", class = "ex">비교과통합관리시스템(De:light) - 마이 페이지 - 마일리지 및 활동점수 내역</p><br>
-        <form><p id="value2", class="value">
-            <input type = "text" maxlength="4" size="3">&nbsp;&nbsp;점
-            <br><br>
-        </p></form>
-        <p id="list3", class="list_style">3. 지도교수 상담</p><br>
-        <p id="ex3", class = "ex">해당하는 문항에 <span id="color">모두</span> 체크해주세요.</p><br>
-        <form><p id="value3", class="value">
-            <input type = "radio" name="yon" value="1">1학기 지도교수 2명 (각 1회 이상) 상담 완료<br>
-            <input type = "radio" name="yon" value="2">2학기 지도교수 2명 (각 1회 이상) 상담 완료<br><br><br>
-        </p></form>
-        <p id="list4", class="list_style">4. 이수 학점</p><br>
-        <form><p id="value4", class="value">
-            <input type = "text" maxlength="4" size="3">&nbsp;&nbsp;점
-            <br><br>
-        </p></form>
-        <p id="list5", class="list_style">5. 평점</p><br>
-        <form><p id="value5", class="value">
-            <input type = "text" maxlength="4" size="3">&nbsp;&nbsp;점
-            <br><br></p>
-            <form><button type="submit">변경하기</button><br><br>
-        </form>
+
         <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
 
         <div class="drawer" id="drawer">
@@ -331,9 +258,9 @@
               </svg>&nbsp;&nbsp;홈 화면</a>
             <br><br><br>
             <hr color="#E9E9EB">
-            <a href="#"><p>전공 선택 점수 계산기</p></a><hr color="#E9E9EB">
-            <a href="#"><p>모의 지원</p></a><hr color="#E9E9EB">
-            <a href="#"><p id="go">덕성여자대학교 홈페이지</p><p id="go-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <a href="#"><p id="menu-cal">전공 선택 점수 계산기</p></a><br><hr color="#E9E9EB">
+            <a href="#"><p id="menu-apply">모의 지원</p></a><br><hr color="#E9E9EB">
+            <a href="#"><p id="go">덕성여자대학교 홈페이지</p><p id="go-icon1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
                   <rect width="22" height="22" fill="#D9D9D9"/>
                 </mask>
@@ -341,7 +268,7 @@
                   <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
                 </g>
               </svg></p></a>
-            <a href="#"><p id="go">덕성여자대학교 포털</p><p id="go-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <a href="#"><p id="go">덕성여자대학교 포털</p><p id="go-icon2"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
                   <rect width="22" height="22" fill="#D9D9D9"/>
                 </mask>
@@ -349,15 +276,20 @@
                   <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
                 </g>
               </svg></p></a>
-            <a href="#"><p id="go">덕성여자대학교 딜라이트</p><p id="go-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <a href="#"><p id="go">덕성여자대학교 딜라이트</p><p id="go-icon3"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
-                  <rect width="22" height="22" fill="#D9D9D9"/>
+                  <rect width="22" height="22" fill="#D 9D9D9"/>
                 </mask>
                 <g mask="url(#mask0_184_1534)">
                   <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
                 </g>
               </svg></p></a>
         </div>
+        <p id="bold">남은 지원 횟수 : n회</p>
+        <p id="normal">지원 횟수를 모두 사용하면 더 이상 변경할 수 없습니다.<br>
+            선택지를 다시 한 번 확인하시고<br>신중하게 결정하세요!</p>
+        <p id="exp">＊이전 등수는 1지망에 한해 마이페이지에서 확인 가능합니다＊<br><br><br><br><br></p>
+        <form><button type="submit">변경하기</button></form>
         <script>
             function toggleDrawer() {
                 var drawer = document.getElementById('drawer');
@@ -380,4 +312,4 @@
                 overlay.style.display = 'none';
             }
         </script>
-    </body> 
+    </body>
