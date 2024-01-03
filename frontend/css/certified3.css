@@ -1,0 +1,187 @@
+/* certified3 .css */
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-top: 47px;
+}
+  
+/* 왼쪽 상단 화살표 아이콘 스타일 */
+.back-arrow {
+    /* 이미지 크기 조정 */
+    width: 23.817px;
+    height: 24px;
+    flex-shrink: 0;
+    position: fixed; /* 스크롤시 고정 */
+    left: 15.88px;
+    right: 350.31px;
+    top: 63px;
+    bottom: 757px;
+    z-index: 1; /* 맨 앞 요소로 */
+}
+
+.gray-box {
+    display: flex;
+    flex-direction: column; /* 요소들을 세로 방향으로 배열 */
+    justify-content: space-between; /* 요소들 사이에 공간 배분 */
+    width: 330px;
+    height: 656px;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background: #E9E9EB;
+    position: absolute;
+    left: 32px;
+    right: 28px;
+    top: 107px;
+    bottom: 81px;
+}
+
+.gray-box .certified-badge {
+    display: flex;
+    width: 72px;
+    height: 27px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background: #C8C8C8;
+    position: relative;
+    top: 35px;
+    left: 23px;
+}
+
+.gray-box .certified-badge span {
+    color: #535353;
+    text-align: center;
+    font-family: 'SF Pro', sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    width: 120px;
+    color: #2C2C2C;
+    text-align: center;
+    font-family: 'SF Pro', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    margin: 0;
+    margin-left: 10px;
+    position: relative;
+    top: 35px;
+    left: 23px;
+    
+}
+
+.description1 {
+    width: 287px;
+    color: #535353;
+    font-family: 'SF Pro', sans-serif;
+    font-size: 9.5px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0; /* 상하단 마진 제거
+    /* margin-left: 23px; 왼쪽 마진 설정 */ 
+    position: absolute;
+    top: 73px;
+    left: 23px;
+
+}
+
+.guide-image {
+    width: 255px;
+    height: 221px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 136px;
+    left: 35px;
+
+}
+
+.description2 {
+    width: 287px;
+    color: var(--MAIN, #7B61FF);
+    font-family: SF Pro;
+    font-size: 9.5px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 200% */
+    margin: 0; /* 상하단 마진 제거
+    /* margin-left: 23px; 왼쪽 마진 설정 */ 
+    position: absolute;
+    top: 379px;
+    left: 27px;
+}
+
+.upload-box {
+    width: 239px;
+    height: 119px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 2px solid #8B8B8B;
+    position: absolute;
+    top: 442px;
+    left: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.photo-upload {
+    display: none;
+}
+
+.custom-btn {
+    display: flex;
+    width: 273px;
+    height: 48px;
+    padding: 6px 1px 6px 0px;
+    align-items: flex-start;
+    flex-shrink: 0;
+
+    border: none; /* 테두리 제거 */
+    border-radius: 18px;
+    background: var(--MAIN, #7B61FF);
+
+    color: #FFF;
+    text-align: center;
+    font-family: SF Pro;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px; /* 138.889% */
+    
+    justify-content: center;
+    align-items: center;
+
+    position: absolute; /* 위치 조정 */
+    top: 586px;
+    left: 25px;
+}
+
+/* 누를 때 색상 변경 */
+.custom-btn:hover {
+    background-color: #4731b8;
+}
