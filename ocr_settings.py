@@ -3,7 +3,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ocr_db',
         'USER': 'amimon',
-        'PASSWORD': 'Ahr123123!',
+        'PASSWORD': 'yr031057!!',
         'HOST': 'localhost',
         'PORT': '3306',
     }
