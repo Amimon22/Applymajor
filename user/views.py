@@ -5,6 +5,8 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.decorators import login_required #forms.py 파일 따로 안만들고 
 from django.contrib.auth import update_session_auth_hash
 from apply.models import Application #이전기록 
+from django.shortcuts import render
+
 
 @login_required #로그인 상태여야함상태여야함
 def change_password(request):
@@ -27,3 +29,7 @@ def user_history(request):
     history = Application.objects.filter(user=request.user)
     
     return render(request, 'user_history.html', {'history': history})
+
+#프론트엔드 파일 렌더링하는 코드 
+def index(request):
+    return render(request, '프론트엔드_파일_경로/index.html')
