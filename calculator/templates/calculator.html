@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="number" name="subject" placeholder="전탐과목 이수 여부">
+        <input type="number" name="delight" placeholder="비교과 점수">
+        <input type="number" name="professor1" placeholder="1학기 지도교수 상담 완료 여부">
+        <input type="number" name="professor2" placeholder="2학기 지도교수 상담 완료 여부">
+        <input type="number" name="course" placeholder="이수학점">
+        <input type="number" name="grade" placeholder="평점" step = 0.01>
+        <input type="submit">
+    </form>
+    {% if result %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>

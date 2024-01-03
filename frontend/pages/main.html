@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- css 파일 불러오기 -->
+    <link rel="stylesheet" type="text/css" href="information.css">
+    <title>information_page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #EFEFEF;
+        }
+
+        article {
+            width: 390px;
+            height: 3510px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        @keyframes appear{
+        from {
+            opacity: 0;
+        }
+
+        to{
+            opacity: 1;
+        }
+        }
+
+        @keyframes appear_from_bottom{
+        0%{
+            transform: translateY(150px);
+            opacity: 0;
+        }
+
+        100%{
+            opacity: 1;
+        }
+        }
+
+            .h1 {
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 590;
+            position:absolute;
+            top:369px;
+            left:54px;
+            width: 360px;
+            line-height: 1.7;
+            display: none;
+            animation: appear ease-out 2.5s;
+
+            span {
+                color: #7B61FF; /* 변경할 색상을 지정합니다. */
+                }
+            }
+            .h2{
+            position:absolute;
+            top:501px;
+            left:260px;
+            color: #8B8B8B;
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 33px; /* 275% */
+            text-decoration-line: underline;
+            display: none;
+            animation: appear ease-out 2.5s;
+            }
+            .h3{
+            span {
+            color: #7B61FF; /* 변경할 색상을 지정합니다. */
+            }
+            h1{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:1150px;
+            left:35px;
+            }
+            h2{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:1180px;
+            left:32px;    
+            }
+            h3{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:1235px;
+            left:32px;        
+            }
+            h4{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:1260px;
+            left:32px;        
+            }
+        animation: appear_from_bottom ease 2s;
+        }
+        .h4{
+            span {
+            color: #7B61FF; /* 변경할 색상을 지정합니다. */
+            }
+            h1{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:2050px;
+            left:35px;
+            }
+            h2{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:2080px;
+            left:32px;    
+            }
+            h3{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:2135px;
+            left:32px;        
+            }
+            h4{
+            color: #383838;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: SF Pro;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: 33px;
+            position:absolute;
+            top:2160px;
+            left:32px;        
+            }
+            animation: appear ease-out 2.5s;
+            }
+            .char{
+            scale:100%;
+            position:absolute;
+            top:2247px;
+            left:250px;
+            transform: rotate(15deg);
+            animation: appear ease-out 2.5s;
+            }
+            .logo{
+                position:absolute;
+                top:2750px;
+                left:100px;
+                animation: appear ease-out 2.5s;
+            }
+            .loginButton{
+                position:absolute;
+                top:2900px;
+                left:130px;
+                width: 123px;
+                height: 30px;
+                border-radius: 50px;
+                background-color: #7B61FF;
+                /*display: flex;*/
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                cursor: pointer;
+                text-align: center;
+                font-family: SF Pro;
+                font-size: 12px;
+                font-weight: 590;
+                display: none;
+                animation: appear ease-out 2.5s;
+            }
+            .calButton{
+                position:absolute;
+                top:2950px;
+                left:130px;
+                width: 123px;
+                height: 30px;
+                border-radius: 50px;
+                background-color: #7B61FF;
+            /*display: flex;*/
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                cursor: pointer;
+                text-align: center;
+                font-family: SF Pro;
+                font-size: 12px;
+                font-weight: 590;
+                display: none;
+                animation: appear ease-out 2s;
+            }
+            .applyButton{
+                position:absolute;
+                top:3000px;
+                left:130px;
+                width: 123px;
+                height: 30px;
+                border-radius: 50px;
+                background-color: #7B61FF;
+                /*display: flex;*/
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                cursor: pointer;
+                text-align: center;
+                font-family: SF Pro;
+                font-size: 12px;
+                font-weight: 590;
+                display: none;
+                animation: appear ease-out 2s;
+            }
+            .mypageButton{
+                position:absolute;
+                top:3050px;
+                left:130px;
+                width: 123px;
+                height: 30px;
+                border-radius: 50px;
+                background-color: #7B61FF;
+                /*display: flex;*/
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                cursor: pointer;
+                text-align: center;
+                font-family: SF Pro;
+                font-size: 12px;
+                font-weight: 590;
+                display: none;
+                animation: appear ease-out 2s;
+            }
+            .page{
+                position:absolute;
+                top:3320px;
+                left:160px;
+                width:123px;
+                height:200px;
+                background-color:white;
+            }
+            .style{
+                display: none;
+            }
+            header { 
+                    position : fixed;
+                    top: 47px; left: 0px;
+                    background-color : #FFF;
+                    width: 100%
+                    height: 56px;
+                    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05); 
+                    z-index:5;
+                }
+                strong {
+                    position : absolute;
+                    top: 17px; left: 160px;
+                    color: #2C2C2C;
+                    text-align: center;
+                    font-family: SF Pro Text;
+                    font-size: 18px;
+                    letter-spacing: -0.408px;
+                } 
+                #m1 {
+                    position : absolute;
+                    top: 17px; left: 15.88px;
+                    right : 0px;            
+                    box-sizing: border-box
+                }
+                .menu-icon {
+                    position: absolute;
+                    top: 17px;
+                    left: 347.63px;
+                    cursor: pointer;
+                    display: inline-block;
+                }
+                .menu-icon div {
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    margin: 6px 0;
+                    transition: 0.4s;
+                }
+                #bold {
+                    position: absolute;
+                    top : 605px; 
+                    left : 144px;
+                    color: #535353;
+                    font-family: SF Pro Text;
+                    font-size: 13px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 27.5px;
+                    letter-spacing: -0.408px;
+                    text-decoration-line: underline;
+                }
+                #normal {
+                    position: absolute;
+                    top : 644px; 
+                    left : 65px;
+                    color: #535353;
+                    text-align: center;
+                    font-family: SF Pro Text;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 22px;
+                    letter-spacing: -0.408px;
+                }
+                #exp {
+                    position: absolute;
+                    top : 727px; 
+                    left : 45px;
+                    color: #C8C8C8;
+                    font-family: SF Pro Text;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 22px;
+                    letter-spacing: -0.408px;
+                }
+                button {
+                    position: absolute;
+                    top : 773px; left : 133.29px;
+                }
+                .overlay {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.32); /* 어두운 배경 색상 및 투명도 조절 */
+                    z-index: 1;
+                }
+                .drawer {
+                    position: absolute;
+                    height: 100%;
+                    width: 0;
+                    z-index: 6;
+                    top: 0;
+                    right: 0;
+                    background-color: #FFF;
+                    overflow-x: hidden;
+                    transition: 0.5s;
+                    padding-top: 60px;
+                }
+        
+                .drawer a {
+                    padding: 15px 32px;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 16px;
+                    color: #535353;
+                    display: block;
+                    transition: 0.3s;
+                }
+        
+                .drawer a:hover {
+                    color: #f1f1f1;
+                }
+        
+                #x {
+                    position: absolute;
+                    width: 24px;
+                    height: 24px;
+                    color: #FFF ;
+                    cursor: pointer;
+                    padding: 0;
+                    margin: 0;
+                }
+                #person {
+                    position: absolute;
+                    top: 112px; left: 35px;
+                    color: #535353;
+                    font-family: SF Pro;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 510;
+                    line-height: 22px;
+                }
+                #mypage {
+                    position: absolute;
+                    top: 147.33px; left: 30.33px;
+                    color: #535353;
+                    font-family: SF Pro;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px;
+                    padding: 0;
+                }
+                #main {
+                    position: absolute;
+                    top: 147px; left: 176px;
+                    color: #535353;
+                    font-family: SF Pro;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 0px;
+                    padding: 0;
+                }
+                p {
+                    padding: 0%;
+                    margin: 0;
+                }
+                #go {
+                    position: absolute;
+                    right: 47px;
+                    color: #8B8B8B;
+                    font-family: SF Pro;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px;
+                    transition: 0.3s;
+                    display: inline-block;
+                }
+                #go-icon1 {
+                    position: absolute;
+                    top: 340px; right: 19px;
+                    display: inline-block;
+                }
+                #go-icon2 {
+                    position: absolute;
+                    top: 371px; right: 19px;
+                    display: inline-block;
+                }
+                #go-icon3 {
+                    position: absolute;
+                    top: 402px; right: 19px;
+                    display: inline-block;
+                }
+                #menu-cal {
+                    position: absolute;
+                    top: 195px; left: 29px;
+                    padding-top: 4%;
+                    padding-bottom: 8%;
+                }
+                #menu-apply {
+                    position: absolute;
+                    top: 255px; left: 29px;
+                    padding-top: 5%;
+                    padding-bottom: 8%;
+                }
+        </style>
+        </head>
+        <body>
+            <article>
+            <header>
+                <strong>Main</strong>
+                <div class="menu-icon" onclick="toggleDrawer()"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                    <mask id="mask0_108_1774" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
+                      <rect width="23.635" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_108_1774)">
+                      <path d="M3.58563 18V16H21.3119V18H3.58563ZM3.58563 13V11H21.3119V13H3.58563ZM3.58563 8V6H21.3119V8H3.58563Z" fill="#2C2C2C"/>
+                    </g>
+                  </svg>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+            </header>
+    
+            <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+    
+            <div class="drawer" id="drawer">
+                <a href="#" onclick="closeDrawer()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <mask id="mask0_184_1544" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                      <rect width="24" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_184_1544)">
+                      <path d="M6.39996 18.3077L5.69226 17.6L11.2923 12L5.69226 6.39996L6.39996 5.69226L12 11.2923L17.6 5.69226L18.3077 6.39996L12.7077 12L18.3077 17.6L17.6 18.3077L12 12.7077L6.39996 18.3077Z" fill="#535353"/>
+                    </g>
+                  </svg>
+                </a>
+                <div id="person">20230000</div>
+                <a id="mypage" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M6.99992 6.99992C6.08325 6.99992 5.29853 6.67353 4.64575 6.02075C3.99297 5.36797 3.66659 4.58325 3.66659 3.66659C3.66659 2.74992 3.99297 1.9652 4.64575 1.31242C5.29853 0.659641 6.08325 0.333252 6.99992 0.333252C7.91659 0.333252 8.70131 0.659641 9.35409 1.31242C10.0069 1.9652 10.3333 2.74992 10.3333 3.66659C10.3333 4.58325 10.0069 5.36797 9.35409 6.02075C8.70131 6.67353 7.91659 6.99992 6.99992 6.99992ZM0.333252 13.6666V11.3333C0.333252 10.861 0.45478 10.427 0.697835 10.0312C0.940891 9.63534 1.26381 9.33325 1.66659 9.12492C2.5277 8.69436 3.4027 8.37145 4.29159 8.15617C5.18047 7.94089 6.08325 7.83325 6.99992 7.83325C7.91659 7.83325 8.81936 7.94089 9.70825 8.15617C10.5971 8.37145 11.4721 8.69436 12.3333 9.12492C12.736 9.33325 13.0589 9.63534 13.302 10.0312C13.5451 10.427 13.6666 10.861 13.6666 11.3333V13.6666H0.333252Z" fill="#7B61FF"/>
+                  </svg>&nbsp;&nbsp;마이페이지</a>
+                <a id="main" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M0.333252 15.5V5.5L6.99992 0.5L13.6666 5.5V15.5H8.66659V9.66667H5.33325V15.5H0.333252Z" fill="#7B61FF"/>
+                  </svg>&nbsp;&nbsp;홈 화면</a>
+                <br><br><br>
+                <hr color="#E9E9EB">
+                <a href="#"><p id="menu-cal">전공 선택 점수 계산기</p></a><br><hr color="#E9E9EB">
+                <a href="#"><p id="menu-apply">모의 지원</p></a><br><hr color="#E9E9EB">
+                <a href="#"><p id="go">덕성여자대학교 홈페이지</p><p id="go-icon1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
+                      <rect width="22" height="22" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_184_1534)">
+                      <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
+                    </g>
+                  </svg></p></a>
+                <a href="#"><p id="go">덕성여자대학교 포털</p><p id="go-icon2"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
+                      <rect width="22" height="22" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_184_1534)">
+                      <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
+                    </g>
+                  </svg></p></a>
+                <a href="#"><p id="go">덕성여자대학교 딜라이트</p><p id="go-icon3"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
+                      <rect width="22" height="22" fill="#D 9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_184_1534)">
+                      <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
+                    </g>
+                  </svg></p></a>
+            </div>
+    <div class="h1">
+        안녕하세요!<br>
+        <span>A-Fly</span>에 방문하신 것을 환영합니다.<br>
+        먼저 저희 서비스를 소개할게요.<br>
+        하단으로 스크롤을 내려주세요.
+    </div>
+    <div style="text-align: center;">
+        <a href="#h2" class="skip-button" onfocus="this.blur()" style="text-decoration:none; color:black;">
+        <div class="h2" align="center" style="font-size:15px; font-weight:bold; 
+        height:auto;">
+        소개 건너뛰기</div>
+        </a>
+
+        </div> 
+    </div>
+	<div style="position:absolute; top:121px; left: 186px; scale: 150%;">
+    <lottie-player src="../js/main.json" background="transparent" style="width: 300px; height: 225px;" speed="1" loop autoplay>
+    </lottie-player>
+    </div>
+    <div class="h3">
+        <h1><span>A-Fly</span>는 제1전공 선택 시 <span>점수 계산</span> 및 </h1>
+        <h2><span>모의 지원 결과</span>를 도출할 수 있는 서비스입니다.</h2>
+        <h3>덕성여자대학교 학우들에게 도움이 되는 </h3>
+        <h4>서비스를 개발하자는 아이디어에서 출발했습니다.</h4>    
+    </div>
+    <div class="h4">
+        <h1><span>A-Fly</span>를 통해 학우 여러분께서 원활한 전공 지원을</h1>
+        <h2>하실 수 있기를 바랍니다.</h2>
+        <h3>해당 웹 서비스는 ‘아미몬’ 이라는</h3>
+        <h4>23년도 ICAN Membership 프로젝트 팀이 개발했습니다.</h4>
+       </div>
+       <div class="char"> 
+       <img src="../images/pencil.png" alt="이미지 설명" width="97px" height="84px">
+        </div>
+        <div class="logo" id="home">
+        <img src="../images/logo.png" alt="이미지 설명" width="200px" height="100px">
+        </div>
+    <div class="loginButton" onclick="handleButtonClick()">로그인</div>
+    <div class="calButton" onclick="handleButtonClick()">점수 계산</div>
+    <div class="applyButton" onclick="handleButtonClick()">모의 지원</div>
+    <div class="mypageButton" onclick="handleButtonClick()">마이페이지</div>
+    <div class="page">
+    </div>
+    </article>
+    <script>
+        function toggleDrawer() {
+            var drawer = document.getElementById('drawer');
+            var overlay = document.getElementById('overlay');
+
+            if (drawer.style.width === '334px') {
+                drawer.style.width = '0';
+                overlay.style.display = 'none';
+            } else {
+                drawer.style.width = '334px';
+                overlay.style.display = 'block';
+            }
+        }
+    
+        function closeDrawer() {
+            var drawer = document.getElementById('drawer');
+            var overlay = document.getElementById('overlay');
+
+            drawer.style.width = '0';
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        window.onscroll = function() {
+        var drawer = document.getElementById('drawer');
+        var overlay = document.getElementById('overlay');
+
+        if (window.pageYOffset > 60) {
+        drawer.style.position = 'fixed';
+        overlay.style.position = 'fixed';
+        drawer.style.top = '0';
+        overlay.style.top = '0';
+    } else {
+        drawer.style.position = 'absolute';
+        overlay.style.position = 'absolute';
+        drawer.style.top = '60px';
+        overlay.style.top = '60px';
+        }
+
+    };
+    function handleButtonClick() {
+    document.body.style.overflow = 'hidden';
+    }
+    </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+    </script>
+    <script src = ../js/main.js></script>
+</body>
+</html>
