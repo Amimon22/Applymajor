@@ -8,6 +8,8 @@ from django.contrib.auth import update_session_auth_hash
 from django.shortcuts import render
 
 
+
+
 @login_required #로그인 상태여야함상태여야함
 def change_password(request):
     if request.method == 'POST':
@@ -21,6 +23,10 @@ def change_password(request):
     
     return render(request, 'change_password.html', {'form': form})
 
+
+def user_detail(request):
+    users = User.objects.all()
+    return render(request, 'user_detail.html', {'users': users})
 
 #이전기록 가져오는 기능
 
