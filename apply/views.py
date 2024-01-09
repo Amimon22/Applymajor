@@ -7,7 +7,8 @@ import os, re
 from django.utils import timezone
 from .models import Source, Academic, Course, Major, Grade, Choice, User_apply_profile
 from django.http import HttpRequest
-from .forms import MajorForm
+from apply.forms import MajorSelectionForm
+from apply.models import Academic, Choice
 
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -229,15 +230,29 @@ class Apply_result(View):
             competition_data.append(model_data)
 
         return render(request, 'apply_result.html', {'competition_data': competition_data})
-    
-def apply_create(request):
-    if request.method == "POST":
-        form = MajorForm(request.POST, user=request.user)
+
+def select_major(request):
+    academic_profile = Academic.objects.get(user=request.user)
+    user_apply_profile = academic_profile.user.user_apply_profile
+    form = MajorSelectionForm(request.POST or None, instance=user_apply_profile)
+
+    if request.method == 'POST':
         if form.is_valid():
-            academic = form.save(commit=False)
-            academic.user = request.user
-            academic.save()
-            return redirect('home')
-    else:
-        form = MajorForm(user=request.user)
-    return render(request, 'apply_create.html', {'form': form})
+            # 저장 전에 해당 사용자의 선택을 모두 삭제
+            Choice.objects.filter(user=request.user).delete()
+
+            # 사용자가 선택한 1~4지망을 저장
+            for priority in range(1, 5):
+                major_choice = form.cleaned_data[f'major_choice{priority}']
+                Choice.objects.create(user=request.user, user_apply_profile=user_apply_profile, major=major_choice, priority=priority)
+
+            return redirect('apply_result')  # 선택 저장 후 이동할 페이지
+        else:
+            # 폼이 유효하지 않으면 에러 메시지를 출력하거나 다른 처리를 추가할 수 있습니다.
+            pass
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'apply_create.html', context)

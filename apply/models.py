@@ -48,6 +48,18 @@ class Academic(models.Model):
     def __str__(self):
         return f"{self.user.username}'s Academic Info"
     
+    def get_related_majors(self):
+        related_majors = []
+        if '글로벌융합대학' in self.major:
+            related_majors = ['국어국문학전공', '일어일문학전공', '중어중문학전공', '영어영문학전공', '불어불문학전공', '독어독문학전공', '스페인어전공', '사학전공', '철학전공', '미술사학전공', '문화인류학전공', '경영학전공', '회계학전공', '국제통상학전공', '법학전공', '사회학전공', '문헌정보학전공', '심리학전공', '아동가족학전공', '사회복지학전공', '정치외교학전공', '의상디자인전공']
+        elif '과학기술대학' in self.major:
+            related_majors = ['디지털소프트웨어전공', '바이오공학전공', '생활체육학전공', '식품영양학전공', '정보통계학전공', '화학전공', '수학전공']
+        elif 'Art&Design대학' in self.major:
+            related_majors = ['동양화전공', '서양화전공', '실내디자인전공', '시각디자인전공', '텍스타일디자인전공']
+
+        return Major.objects.filter(major_name__in=related_majors)
+
+    
 class Course(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     course_code = models.CharField(max_length=1000)

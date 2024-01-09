@@ -5,4 +5,5 @@ from .views import Apply_result
 urlpatterns = [
     path('ocr/<int:category>/', views.ocr_read, name='ocr_read'),
     path('result/', Apply_result.as_view(), name='apply_result'),
+    path('choice/', views.select_major, name='apply_choice'),
 ]
