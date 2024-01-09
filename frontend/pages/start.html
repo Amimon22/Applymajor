@@ -1,21 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>start</title>
+    <title>information_page</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #EFEFEF;
+        }
+
+        article {
+            width: 390px;
+            height: 844px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
         .logo{
-            text-align: center;
             position:absolute;
             top:100px;
-            left:-30px;
+            left:-90px;
         }
     </style>
 </head>
 <body>
+    <article>
     <div class="logo">
         <img src="../images/logoAni.gif" alt="logo" width="600px" height="600px">
     </div>
+    </article>
+    <script>
+        // 일정 시간(밀리초)이 지난 후에 다음 페이지로 이동
+        setTimeout(function() {
+            window.location.href = '../pages/main.html';
+        }, 3500); // 3500밀리초(3.5초) 후에 이동하도록 설정
+    </script>
 </body>
 </html>
