@@ -3,13 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>
-            과기 지망선택
+            지망선택
         </title>
     </head>
     <body>
         <form method = "POST">
             {% csrf_token %}
-            <select name="major" id=""></select>
+            {{ form.as_p }}
+            <button type="submit">제출</button>
         </form>
     </body>
 </html>
