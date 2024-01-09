@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.core.files.storage import FileSystemStorage
 from PIL import Image
@@ -7,6 +7,8 @@ import os, re
 from django.utils import timezone
 from .models import Source, Academic, Course, Major, Grade, Choice, User_apply_profile
 from django.http import HttpRequest
+from .forms import MajorForm
+
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
@@ -227,3 +229,15 @@ class Apply_result(View):
             competition_data.append(model_data)
 
         return render(request, 'apply_result.html', {'competition_data': competition_data})
+    
+def apply_create(request):
+    if request.method == "POST":
+        form = MajorForm(request.POST, user=request.user)
+        if form.is_valid():
+            academic = form.save(commit=False)
+            academic.user = request.user
+            academic.save()
+            return redirect('home')
+    else:
+        form = MajorForm(user=request.user)
+    return render(request, 'apply_create.html', {'form': form})
