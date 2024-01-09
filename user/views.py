@@ -11,6 +11,10 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
+#로그아웃하는 코드 
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -58,12 +62,15 @@ def user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('user_home')  # 로그인 성공 시 리다이렉트할 URL
+            return redirect('success')  # 로그인 성공 시 리다이렉트할 URL
         else:
             error_message = '아이디 또는 비밀번호가 올바르지 않습니다.'
             return render(request, 'login.html', {'error_message': error_message})
     else:
         return render(request, 'login.html')
+    
+def login_success(request):
+    return render(request, 'login_success.html')
 
 @login_required #로그인 상태여야함상태여야함
 def change_password(request):
@@ -71,8 +78,12 @@ def change_password(request):
         form = PasswordChangeForm(request.user, request.POST)
         if form.is_valid():
             user = form.save()
+            print(f"비밀번호가 변경된 사용자: {user}")
             update_session_auth_hash(request, user)  # 세션의 인증 정보 업데이트
+            print("비밀번호 변경완료")           
             return redirect('password_change_done')
+        else:
+            print(f"폼 에러: {form.errors}")
     else:
         form = PasswordChangeForm(request.user)
     
@@ -94,3 +105,14 @@ def change_password(request):
 #프론트엔드 파일 렌더링하는 코드 
 # def index(request):
 #     return render(request, '프론트엔드_파일_경로/index.html')
+
+#로그아웃하는 코드
+
+def user_logout(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('logout_success')
+    return render(request, 'logout.html')
+
+def logout_success(request):
+    return render(request, 'logout_success.html')
