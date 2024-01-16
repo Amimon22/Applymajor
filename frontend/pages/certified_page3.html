@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- css 파일 불러오기 -->
-    <link rel="stylesheet" type="text/css" href="../css/certified3.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css//certified2.css' %}">
     <title>certified_page3</title>
     <style>
         body {          
@@ -34,7 +34,7 @@
         <header class="header">
             <div class="back-arrow">
                 <a href="certified_page3.html">
-                    <img src="../images/arrow_back.svg" alt="Back">
+                    <img src="{% static 'images/arrow_back.svg' %}" alt="Back">
                 </a>
             </div>
         </header>
@@ -47,12 +47,12 @@
             </div>
             <p class="description1">덕성포털 > 통합정보시스템 > 성적 > 전체성적조회
                 <br>에서 전체성적정보를 캡쳐해서 준비해주세요.</p>
-            <img src="../images/certified_ex3.png" alt="안내사진" class="guide-image">
+            <img src="{% static 'images/certified_ex3.png' %}" alt="안내사진" class="guide-image">
             <p class="description2">위에서 강조표시한 2개 학기의 취득학점, 평점계가 확실하게
                 <br>보이도록 캡쳐해주셔야 제대로 인증이 가능합니다.</p>
             <div class="upload-box">
                 <label for="photo-upload">
-                    <img src="../images/add_circle.svg" alt="Add" class="add-icon">
+                    <img src="{% static 'images/add_circle.svg' %}" alt="Add" class="add-icon">
                 </label>
                 <input type="file" id="photo-upload" class="photo-upload">
             </div> 
@@ -62,6 +62,6 @@
             </form>            
         </div>
     </article>  
-    <script src="../js/certified.js"></script>
+    <script src="{% static 'js/certified.js' %}"></script>
 </body>
 </html>

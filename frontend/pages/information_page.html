@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- css 파일 불러오기 -->
-    <link rel="stylesheet" type="text/css" href="../css/information.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/information.css' %}">
     <title>information_page</title>
     <style>
         body {
@@ -72,7 +72,7 @@
         <header class="header">
             <div class="back-arrow">
               <!-- 왼쪽 상단 화살표 아이콘 -->
-              <a href="main.html"><img src="../images/arrow_back.svg" alt="Back"></a>
+              <a href="main.html"><img src="{% static 'images/arrow_back.svg' %}" alt="Back"></a>
             </div>
         </header>
         <div class="purple-shape">
@@ -83,7 +83,7 @@
                 개인정보 수집 동의 부탁드립니다.
             </p>
             <p class="consent"> 개인정보 수집 동의서 전문 보기</p>
-            <img class="memon-icon" src="../images/memon_basic.png" alt="Memon Icon">
+            <img class="memon-icon" src="{% static 'images/memon_basic.png' %}" alt="Memon Icon">
         </div>
         <div class="gray-shape">
             <p class ="consent">
@@ -105,9 +105,9 @@
             </p>
         </div>
         <button class="next-btn">
-            <img src="../images/arrow_forward.svg" alt="Next" class="arrow-right"/>
+            <img src="{% static 'images/arrow_forward.svg' %}" alt="Next" class="arrow-right"/>
         </button>
     </article> 
-    <script src="../js/information.js"></script>        
+    <script src="{% static 'js/information.js' %}"></script>        
 </body>
 </html>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <!-- css 파일 불러오기 -->
-        <link rel="stylesheet" type="text/css" href="../css/calculator.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/calculator.css' %}">
         <title>calculator_page</title>
         <style>
             body {
@@ -138,7 +138,7 @@
             <div id="MaxPercent" class="percent"></div>
             <div id="NorPercent" class="percent"></div>
             <div id="MinPercent" class="percent"></div> -->
-            <img id="mimonImg" src="../images/memon_surprise.png" falt="mimon">
+            <img id="mimonImg" src="{% static 'images/memon_surprise.png' %}" falt="mimon">
 
             <div class="container1">
                 <h1 class="title">성적 정보 확인</h1>
@@ -173,7 +173,7 @@
             <div class="container2">
                 <h1 class="title">모의지원 이용하기</h1>
                 <p class="sub-title">나의 모의지원 결과가 궁금하다면?</p>
-                <img src="../images/blar.png" alt="Image">
+                <img src="{% static 'images/blar.png' %}" alt="Image">
                 <div class="button-container">
                   <a href="../pages/certified_page_1.html">
                     <span>모의지원 하러가기</span>
