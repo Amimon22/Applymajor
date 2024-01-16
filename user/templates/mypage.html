@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Page</title>
+</head>
+<body>
+    <h1> 사용자 정보 </h1>
+    <p>{{ user_profile.user.username }}
+    {% for item in apply_data %}
+        <li>
+            {{ item.major_choices }}
+            {{ item.major_calculate_competition_rate }}
+    <!-- 다른 정보 더 추가 -->
+        </li>
+    </p>
+</body>
+</html>

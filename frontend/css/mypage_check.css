@@ -1,0 +1,347 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #EFEFEF;
+    font-family: SF Pro;
+}
+article {
+    width: 390px;
+    height: 844px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+header { 
+    position : fixed;
+    z-index: 1;
+    top: 47px; left: 0px;
+    width: 390px;
+    height: 56px;
+}
+strong {
+    position : absolute;
+    top: 18px; left: 0px;
+    width: 390px;
+    color: #2C2C2C;
+    text-align: center;
+    font-family: SF Pro Text;
+    font-size: 17px;
+    letter-spacing: -0.408px;
+} 
+#m1 {
+    position : absolute;
+    top: 17px; left: 15.88px;
+    width: 24px; height: 24px;
+    right : 0px;            
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.menu-icon {
+    position : absolute;
+    top: 17px; left: 342.63px;            
+    cursor: pointer;
+    display: inline-block;
+}
+.menu-icon div {
+    width: 30px;
+    height: 4px;
+    position : absolute;
+    top: 17px; left: 342.63px;    
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.32); /* 어두운 배경 색상 및 투명도 조절 */
+    z-index: 1;
+}
+.drawer {
+    position: absolute;
+    height: 790px;
+    width: 0;
+    z-index: 2;
+    top: 0px;
+    right: 0px;
+    background-color: #FFF;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.drawer a {
+    padding: 15px 32px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #535353;
+    display: block;
+    transition: 0.3s;
+}
+
+#menu-cal:hover {
+    color: #f1f1f1;
+}
+#menu-apply:hover {
+    color: #f1f1f1;
+}
+
+#hr1 {
+    position: relative;
+    top: 58px; left:0px;
+}
+#hr2 {
+    position: relative;
+    top: 58px; left:0px;
+
+}
+#hr3 {
+    position: relative;
+    top: 58px; left:0px;
+
+}
+
+#x {
+    position: absolute;
+    top: 63px; left: 24px;
+    width: 24px;
+    height: 24px;
+    color: #FFF ;
+    cursor: pointer;
+    padding: 0;
+    padding-bottom: 10%;
+    margin: 0;
+}
+#person {
+    position: absolute;
+    top: 112px; left: 35px;
+    color: #535353;
+    font-family: SF Pro;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 510;
+    line-height: 22px;
+}
+#mypage {
+    position: absolute;
+    top: 147.33px; left: 30.33px;
+    color: #535353;
+    font-family: SF Pro;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    padding: 0;
+}
+#main {
+    position: absolute;
+    top: 147px; left: 176px;
+    color: #535353;
+    font-family: SF Pro;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0px;
+    padding: 0;
+}
+#go1 {
+    position: absolute;
+    top: 343px;
+    right: 47px;
+    color: #8B8B8B;
+    font-family: SF Pro;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    transition: 0.5s;
+    display: inline-block;
+}
+#go2 {
+    position: absolute;
+    top: 374px;
+    right: 47px;
+    color: #8B8B8B;
+    font-family: SF Pro;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    transition: 0.5s;
+    display: inline-block;
+}
+#go3 {
+    position: absolute;
+    top: 404px;
+    right: 47px;
+    color: #8B8B8B;
+    font-family: SF Pro;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    transition: 0.5s;
+    display: inline-block;
+}
+#go-icon1 {
+    position: absolute;
+    top: 340px; right: 19px;
+    display: inline-block;
+}
+#go-icon2 {
+    position: absolute;
+    top: 371px; right: 19px;
+    display: inline-block;
+}
+#go-icon3 {
+    position: absolute;
+    top: 402px; right: 19px;
+    display: inline-block;
+}
+#menu-cal {
+    position: absolute;
+    top: 195px; left: 29px;
+    margin-top: 4%;
+}
+#menu-apply {
+    position: absolute;
+    top: 255px; left: 29px;
+}
+/*메뉴바 코드 끝*/
+
+
+#NumberRectangle {
+    position: absolute;
+    top: 112px; left: 28px;
+    width: 332px;
+    height: 108px;
+    background-color: #7B61FF;
+    border-radius: 18px;
+    display: inline-block;
+}
+.circle {
+    position: absolute;
+    top: 146px; left: 56px;
+    width: 35px;
+    height: 35px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+#PersonIcon {
+    position: absolute;
+    top: 149.1px; left: 59.7px;
+}
+.Bold {
+    position: absolute;
+    font-style: normal;
+    font-size: 17px;
+    text-align: center;
+    font-weight: 590;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+}
+#Number {
+    top: 141px; left: 114px;
+    color: #FFFFFF;
+    font-weight: 580;
+}
+#chance {
+    position: absolute;
+    top: 168px; left: 114px;
+    color: #EFEFEF;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 510;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+}
+#myinfo {
+    top: 244px; left: 36px;
+    color: #2C2C2C;
+}
+#InfoRectangle {
+    position: absolute;
+    top: 277px; left: 28px;
+    width: 332px;
+    height: 355px;
+    border-radius: 18px;
+    border: 2px solid #9581FF;
+    display: inline-block;
+}
+#ul1 {
+    position: absolute;
+    top: 282px; left: 36px; /*임의수정*/
+    color: #535353;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 590;
+    line-height: 37px;
+    display: inline-block;
+}
+#ul2 {
+    position: absolute;
+    top: 530px; left: 36px; /*임의수정*/
+    color: #535353;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 590;
+    line-height: 37px;
+    display: inline-block;
+}
+.li {
+    position: absolute;
+    color: #7B61FF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    display: inline-block;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 590;
+    line-height: 37px;
+    margin: 0%; padding: 0%;
+    white-space: nowrap;
+}
+#li1 {
+    top: 0px; left: 119px;
+}
+#li2 {
+    top: 37px; left: 137px;
+}
+#li3 {
+    top: 73px; left: 119px;
+}
+#li4 {
+    top: 145px; left: 58px;
+    line-height: 29px;
+}
+#li5 {
+    top: 0px; left: 165px;
+}
+#li6 {
+    top: 37px; left: 147px;
+}
+#passwordReset {
+    position: absolute;
+    top: 658px; left: 249px;
+    color: #535353;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    text-decoration-line: underline;
+    cursor: pointer;
+}

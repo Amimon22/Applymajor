@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Result</title>
+</head>
+<body>
+    <h1>Apply Result</h1>
+
+    {% for model_data in competition_data %}
+        <h2>{{ model_data.major.major_name }}</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Rank</th>
+                    <th>Competition Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user_data in model_data.user_data %}
+                    <tr>
+                        <td>{{ user_data.user.username }}</td>
+                        <td>
+                            {% if user_data.rank %}
+                                {{ user_data.rank }}
+                            {% else %}
+                                No Rank
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if user_data.competition_rate %}
+                                {{ user_data.competition_rate }}%
+                            {% else %}
+                                No Competition Rate
+                            {% endif %}
+                        </td>
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endfor %}
+</body>
+</html>
