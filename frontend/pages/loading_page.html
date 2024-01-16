@@ -1,18 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/loading_page.css">
+    <link rel="stylesheet" href="{% static 'css/loading_page.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="information.css">
-    <title>information_page</title>
+    <title>information</title>
     <style>
 
     </style>
     <body>
         <article>
         <div class="loading">
-            <lottie-player src="../js/loading.json" background="transparent" " speed="1" loop autoplay>
+            <lottie-player src="{% static 'js/loading.json' %}" background="transparent" " speed="1" loop autoplay>
             </lottie-player>
         </div>
         <div class="text">

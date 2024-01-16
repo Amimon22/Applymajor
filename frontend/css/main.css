@@ -404,6 +404,7 @@ animation: appear_from_bottom ease 2s;
             cursor: pointer;
             padding: 0;
             margin: 0;
+            left:24px;
         }
         #person {
             position: absolute;
@@ -441,8 +442,9 @@ animation: appear_from_bottom ease 2s;
             padding: 0%;
             margin: 0;
         }
-        #go {
+        #go1 {
             position: absolute;
+            top: 343px;
             right: 47px;
             color: #8B8B8B;
             font-family: SF Pro;
@@ -450,7 +452,33 @@ animation: appear_from_bottom ease 2s;
             font-style: normal;
             font-weight: 400;
             line-height: 22px;
-            transition: 0.3s;
+            transition: 0.5s;
+            display: inline-block;
+        }
+        #go2 {
+            position: absolute;
+            top: 374px;
+            right: 47px;
+            color: #8B8B8B;
+            font-family: SF Pro;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            transition: 0.5s;
+            display: inline-block;
+        }
+        #go3 {
+            position: absolute;
+            top: 404px;
+            right: 47px;
+            color: #8B8B8B;
+            font-family: SF Pro;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            transition: 0.5s;
             display: inline-block;
         }
         #go-icon1 {
@@ -479,4 +507,16 @@ animation: appear_from_bottom ease 2s;
             top: 255px; left: 29px;
             padding-top: 5%;
             padding-bottom: 8%;
+        }
+        #hr1 {
+            position: relative;
+            top: 58px; left:0px;
+        }
+        #hr2 {
+            position: relative;
+            top: 58px; left:0px;
+        }
+        #hr3 {
+            position: relative;
+            top: 58px; left:0px;
         }

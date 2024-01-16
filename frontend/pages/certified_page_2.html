@@ -1,10 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/certified_page_2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="information.css">
     <title>certified_page</title>
     <style>
     </style>
@@ -37,7 +37,7 @@
             <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
     
             <div class="drawer" id="drawer">
-                <a href="#" onclick="closeDrawer()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <a href="#" onclick="closeDrawer()" id="x"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <mask id="mask0_184_1544" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
                         <rect width="24" height="24" fill="#D9D9D9"/>
                     </mask>
@@ -55,9 +55,9 @@
                     <path d="M0.333252 15.5V5.5L6.99992 0.5L13.6666 5.5V15.5H8.66659V9.66667H5.33325V15.5H0.333252Z" fill="#7B61FF"/>
                     </svg>&nbsp;&nbsp;홈 화면</a>
                 <br><br><br>
-                <hr color="#E9E9EB">
-                <a href="y_input_page.html"><p id="menu-cal">전공 선택 점수 계산기</p></a><br><hr color="#E9E9EB">
-                <a href="certified_page_1.html"><p id="menu-apply">모의 지원</p></a><br><hr color="#E9E9EB">
+                <hr id="hr1" color="#E9E9EB">
+                <a href="y_input_page.html"><p id="menu-cal">전공 선택 점수 계산기</p></a><br><hr id="hr2" color="#E9E9EB">
+                <a href="certified_page_1.html"><p id="menu-apply">모의 지원</p></a><br><hr id="hr3" color="#E9E9EB">
                 <a href="https://www.duksung.ac.kr/main.do?isMaster=N&isLogined=N&viewPrefix=%2FWEB-INF%2Fjsp%2Fcms&urlRootPath=&siteResourcePath=%2Fsite%2Fduksung"><p id="go">덕성여자대학교 홈페이지</p><p id="go-icon1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                     <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
                         <rect width="22" height="22" fill="#D9D9D9"/>
@@ -84,7 +84,7 @@
                     </svg></p></a>
             </div>
         <div class = img1>
-            <img src="../images/pencil2.png" alt="chat" width="390px" height="390px">
+            <img src="{% static 'images/pencil2.png' %}" alt="chat" width="390px" height="390px">
         </div>
         <div class = rect1>
         </div>
@@ -102,7 +102,7 @@
         </article>
         <script>
             function backClick(){
-                window.location.href = "이전 페이지로 이동";
+                window.location.href = "../pages/certified_page_2.html";
             }
             function toggleDrawer() {
                 var drawer = document.getElementById('drawer');

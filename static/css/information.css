@@ -1,0 +1,168 @@
+/* information.css */
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-top: 47px;
+}
+  
+/* 왼쪽 상단 화살표 아이콘 스타일 */
+.back-arrow {
+    /* 이미지 크기 조정 */
+    width: 23.817px;
+    height: 24px;
+    flex-shrink: 0;
+    position: fixed; /* 스크롤시 고정 */
+    left: 15.88px;
+    right: 350.31px;
+    top: 63px;
+    bottom: 757px;
+    z-index: 1; /* 맨 앞 요소로 */
+}
+
+.purple-shape {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 212px;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background: var(--MAIN, #7B61FF);
+    position: absolute;
+    left: 43px;
+    top: 109px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+} 
+
+.purple-shape p.normal {
+    width: 303px;
+    font-family: 'SF Pro';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 25px;
+    color: #FFF;
+    font-weight: 274;
+    margin-left: 18px;
+    margin-top: 25px;
+}
+
+.highlighted {
+    font-weight: 700;
+}
+
+.purple-shape p.consent {
+    width: 175px;
+    color: #FFF;
+    text-align: right;
+    font-family: 'SF Pro';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 274;
+    line-height: 25px;
+    margin-left: 126px;
+    text-decoration-line: underline;
+}
+
+.memon-icon {
+    position: absolute;
+    width: 67px;
+    height: 73px;
+    flex-shrink: 0;
+    left: -19px; 
+    right: 299px;
+    top: 168px;
+    bottom: 494px;
+    z-index: 1;
+}
+
+.gray-shape {
+    display: flex;
+    flex-direction: column; /* 추가된 속성 */
+    width: 319px;
+    height: 425px;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background: #E9E9EB;
+    position: absolute;
+    left: 43px;
+    top: 350px;
+} 
+
+.gray-shape p.consent {
+    width: 282px;
+    color: var(--TEXT, #2C2C2C);
+    font-family: SF Pro;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px; /* 156.25% */
+    margin-left: 60px;
+    margin-top: 27px;
+}
+
+.gray-shape p.normal {
+    color: var(--TEXT, #2C2C2C);
+    font-family: SF Pro;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 510;
+    line-height: 25px;
+    margin-left: 25px;
+}
+
+.gray-shape p.check {
+    color: var(--TEXT, #2C2C2C);
+    text-align: right;
+    font-family: SF Pro;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px; /* 178.571% */
+    display: flex; /* 추가된 속성 */
+    align-items: center; /* 추가된 속성 */
+    margin-left: 188px;
+    margin-top: -8px;
+}
+input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    border: 1.8px solid var(--MAIN, #7B61FF);
+    border-radius: 50%; /* 이 속성을 통해 체크박스를 원형으로 만듭니다. */
+    -webkit-appearance: none; /* 기본 체크박스 스타일을 제거하기 위한 속성입니다. */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--MAIN, #7B61FF); /* 체크박스가 체크되었을 때의 배경색을 지정합니다. */
+}
+
+.next-btn {
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    background-color: var(--MAIN, #7B61FF);
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 631px; 
+    right: 53px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.arrow-right {
+    width: 41px;
+    height: 39.433px;
+    flex-shrink: 0;
+}
+
+

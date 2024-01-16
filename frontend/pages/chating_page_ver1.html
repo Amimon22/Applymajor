@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/chating_page_1.css">
+    <link rel="stylesheet" href="{% static 'css/chating_page_1.css' %}">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>information_page</title>
     <style>
@@ -38,7 +39,7 @@
             <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
     
             <div class="drawer" id="drawer">
-                <a href="#" onclick="closeDrawer()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <a href="#" onclick="closeDrawer()" id="x"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <mask id="mask0_184_1544" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
                         <rect width="24" height="24" fill="#D9D9D9"/>
                     </mask>
@@ -56,10 +57,10 @@
                     <path d="M0.333252 15.5V5.5L6.99992 0.5L13.6666 5.5V15.5H8.66659V9.66667H5.33325V15.5H0.333252Z" fill="#7B61FF"/>
                     </svg>&nbsp;&nbsp;홈 화면</a>
                 <br><br><br>
-                <hr color="#E9E9EB">
-                <a href="y_input_page.html"><p id="menu-cal">전공 선택 점수 계산기</p></a><br><hr color="#E9E9EB">
-                <a href="certified_page_1.html"><p id="menu-apply">모의 지원</p></a><br><hr color="#E9E9EB">
-                <a href="https://www.duksung.ac.kr/main.do?isMaster=N&isLogined=N&viewPrefix=%2FWEB-INF%2Fjsp%2Fcms&urlRootPath=&siteResourcePath=%2Fsite%2Fduksung"><p id="go">덕성여자대학교 홈페이지</p><p id="go-icon1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <hr id="hr1" color="#E9E9EB">
+                <a href="y_input_page.html"><p id="menu-cal">전공 선택 점수 계산기</p></a><br><hr id="hr2" color="#E9E9EB">
+                <a href="certified_page_1.html"><p id="menu-apply">모의 지원</p></a><br><hr id="hr3" color="#E9E9EB">
+                <a href="https://www.duksung.ac.kr/main.do?isMaster=N&isLogined=N&viewPrefix=%2FWEB-INF%2Fjsp%2Fcms&urlRootPath=&siteResourcePath=%2Fsite%2Fduksung"><p id="go1">덕성여자대학교 홈페이지</p><p id="go-icon1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                     <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
                         <rect width="22" height="22" fill="#D9D9D9"/>
                     </mask>
@@ -67,7 +68,7 @@
                         <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
                     </g>
                     </svg></p></a>
-                <a href="https://sso.duksung.ac.kr/svc/tk/Auth.do?ac=Y&ifa=N&id=portal&"><p id="go">덕성여자대학교 포털</p><p id="go-icon2"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <a href="https://sso.duksung.ac.kr/svc/tk/Auth.do?ac=Y&ifa=N&id=portal&"><p id="go2">덕성여자대학교 포털</p><p id="go-icon2"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                     <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
                         <rect width="22" height="22" fill="#D9D9D9"/>
                     </mask>
@@ -75,7 +76,7 @@
                         <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
                     </g>
                     </svg></p></a>
-                <a href="https://delight.duksung.ac.kr/"><p id="go">덕성여자대학교 딜라이트</p><p id="go-icon3"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <a href="https://delight.duksung.ac.kr/"><p id="go3">덕성여자대학교 딜라이트</p><p id="go-icon3"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                     <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
                         <rect width="22" height="22" fill="#D 9D9D9"/>
                     </mask>
@@ -85,7 +86,7 @@
                     </svg></p></a>
             </div>
         <div class = img1>
-            <lottie-player src="../js/appear.json" background="transparent" speed="1" loop autoplay>
+            <lottie-player src="{% static 'js/appear.json' %}" background="transparent" speed="1" loop autoplay>
             </lottie-player>
         </div>
         </div>

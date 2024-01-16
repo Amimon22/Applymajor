@@ -109,6 +109,8 @@
                 top: 17px; left: 15.88px;
                 right : 0px;            
                 box-sizing: border-box;
+                width:24px;
+                height:24px
             }
             #m1:hover{
                 cursor: pointer;
@@ -214,7 +216,23 @@
                 cursor: pointer;
                 padding: 0;
                 margin: 0;
+                left:24px;
             }
+            #hr1 {
+                position: relative;
+                top: 58px; left:0px;
+            }
+            #hr2 {
+                position: relative;
+                top: 58px; left:0px;
+
+            }
+            #hr3 {
+                position: relative;
+                top: 58px; left:0px;
+
+            }
+
             #person {
                 position: absolute;
                 top: 112px; left: 35px;
@@ -247,8 +265,35 @@
                 line-height: 0px;
                 padding: 0;
             }
-            #go {
+            #go1 {
                 position: absolute;
+                top: 343px;
+                right: 47px;
+                color: #8B8B8B;
+                font-family: SF Pro;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+                transition: 0.5s;
+                display: inline-block;
+                }
+            #go2 {
+                position: absolute;
+                top: 374px;
+                right: 47px;
+                color: #8B8B8B;
+                font-family: SF Pro;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+                transition: 0.5s;
+                display: inline-block;
+                }
+            #go3 {
+                position: absolute;
+                top: 404px;
                 right: 47px;
                 color: #8B8B8B;
                 font-family: SF Pro;

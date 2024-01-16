@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/majorselect.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>start</title>
+    <title>information_page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #EFEFEF;
+        }
+        article {
+            width: 390px;
+            height: 844px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <header>
+            <span id="m1" onclick="backClick()"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <mask id="mask0_108_1777" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
+                <rect x="0.877808" width="23.8168" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_108_1777)">
+                <path d="M16.5132 22L6.66528 12L16.5132 2L18.2612 3.775L10.1613 12L18.2612 20.225L16.5132 22Z" fill="#2C2C2C"/>
+                </g>
+                </svg></span>
+            <strong>지망 선택</strong>
+            <div class="menu-icon" onclick="toggleDrawer()"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <mask id="mask0_108_1774" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
+                  <rect width="23.635" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_108_1774)">
+                  <path d="M3.58563 18V16H21.3119V18H3.58563ZM3.58563 13V11H21.3119V13H3.58563ZM3.58563 8V6H21.3119V8H3.58563Z" fill="#2C2C2C"/>
+                </g>
+              </svg>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+        </header>
+        </div>
+        <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+
+        <div class="drawer" id="drawer">
+            <a href="#" onclick="closeDrawer()" id="x"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <mask id="mask0_184_1544" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_184_1544)">
+                    <path d="M6.39996 18.3077L5.69226 17.6L11.2923 12L5.69226 6.39996L6.39996 5.69226L12 11.2923L17.6 5.69226L18.3077 6.39996L12.7077 12L18.3077 17.6L17.6 18.3077L12 12.7077L6.39996 18.3077Z" fill="#535353"/>
+                </g>
+                </svg>
+            </a>
+            <div id="person">20230000</div>
+            <a id="mypage" href="y_mypage_main.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M6.99992 6.99992C6.08325 6.99992 5.29853 6.67353 4.64575 6.02075C3.99297 5.36797 3.66659 4.58325 3.66659 3.66659C3.66659 2.74992 3.99297 1.9652 4.64575 1.31242C5.29853 0.659641 6.08325 0.333252 6.99992 0.333252C7.91659 0.333252 8.70131 0.659641 9.35409 1.31242C10.0069 1.9652 10.3333 2.74992 10.3333 3.66659C10.3333 4.58325 10.0069 5.36797 9.35409 6.02075C8.70131 6.67353 7.91659 6.99992 6.99992 6.99992ZM0.333252 13.6666V11.3333C0.333252 10.861 0.45478 10.427 0.697835 10.0312C0.940891 9.63534 1.26381 9.33325 1.66659 9.12492C2.5277 8.69436 3.4027 8.37145 4.29159 8.15617C5.18047 7.94089 6.08325 7.83325 6.99992 7.83325C7.91659 7.83325 8.81936 7.94089 9.70825 8.15617C10.5971 8.37145 11.4721 8.69436 12.3333 9.12492C12.736 9.33325 13.0589 9.63534 13.302 10.0312C13.5451 10.427 13.6666 10.861 13.6666 11.3333V13.6666H0.333252Z" fill="#7B61FF"/>
+                </svg>&nbsp;&nbsp;마이페이지</a>
+            <a id="main" href="main.html"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M0.333252 15.5V5.5L6.99992 0.5L13.6666 5.5V15.5H8.66659V9.66667H5.33325V15.5H0.333252Z" fill="#7B61FF"/>
+                </svg>&nbsp;&nbsp;홈 화면</a>
+            <br><br><br>
+            <hr color="#E9E9EB">
+            <a href="y_input_page.html"><p id="menu-cal">전공 선택 점수 계산기</p></a><br><hr color="#E9E9EB">
+            <a href="certified_page_1.html"><p id="menu-apply">모의 지원</p></a><br><hr color="#E9E9EB">
+            <a href="https://www.duksung.ac.kr/main.do?isMaster=N&isLogined=N&viewPrefix=%2FWEB-INF%2Fjsp%2Fcms&urlRootPath=&siteResourcePath=%2Fsite%2Fduksung"><p id="go1">덕성여자대학교 홈페이지</p><p id="go-icon1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
+                    <rect width="22" height="22" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_184_1534)">
+                    <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
+                </g>
+                </svg></p></a>
+            <a href="https://sso.duksung.ac.kr/svc/tk/Auth.do?ac=Y&ifa=N&id=portal&"><p id="go2">덕성여자대학교 포털</p><p id="go-icon2"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
+                    <rect width="22" height="22" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_184_1534)">
+                    <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
+                </g>
+                </svg></p></a>
+            <a href="https://delight.duksung.ac.kr/"><p id="go3">덕성여자대학교 딜라이트</p><p id="go-icon3"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
+                    <rect width="22" height="22" fill="#D 9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_184_1534)">
+                    <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
+                </g>
+                </svg></p></a>
+        </div>
+
+        <div class="mjselect">
+            <div class = "rect">
+                <span class="college">과학기술대학</span>
+            </div>
+            <h1>1지망 전공을 선택하세요.</h1>
+            <div class="mj1">
+                <select name="mj1"></select>
+                <hr />
+            </div>
+            <h2>2지망 전공을 선택하세요.</h2>
+            <div class="mj2">
+                <select name="mj2"></select>
+                <hr />
+            </div>
+
+            <h3>3지망 전공을 선택하세요.</h3>
+            <div class="mj3">
+                <select name="mj3"></select>
+                <hr />
+            </div>
+            <h4>4지망 전공을 선택하세요.</h4>
+            <div class="mj4">
+                <select name="mj4"></select>
+            </div>
+        </div>
+        
+        <div class = "rb" onclick=resultButtonClick()>
+            <div class="bt">지원하기</div>
+        </div>
+
+    </article>
+    <script>
+        function backClick(){
+            window.location.href = "../pages/certified_page3.html";
+        }
+        function toggleDrawer() {
+            var drawer = document.getElementById('drawer');
+            var overlay = document.getElementById('overlay');
+
+            if (drawer.style.width === '334px') {
+                drawer.style.width = '0';
+                overlay.style.display = 'none';
+            } else {
+                drawer.style.width = '334px';
+                overlay.style.display = 'block';
+            }
+        }
+    
+        function closeDrawer() {
+            var drawer = document.getElementById('drawer');
+            var overlay = document.getElementById('overlay');
+
+            drawer.style.width = '0';
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        window.onscroll = function() {
+        var drawer = document.getElementById('drawer');
+        var overlay = document.getElementById('overlay');
+        var article = document.querySelector('article');
+
+        if (window.pageYOffset <60) {
+            drawer.style.position = 'fixed';
+            overlay.style.position = 'fixed';
+            drawer.style.top = '0';
+            overlay.style.top = '0';
+            article.style.marginTop = '60px'; // article의 상단 여백 추가
+        } else {
+            drawer.style.position = 'absolute';
+            overlay.style.position = 'absolute';
+            drawer.style.top = '60px';
+            overlay.style.top = '60px';
+            article.style.marginTop = '0'; // article의 상단 여백 제거
+        }
+        }
+        function resultButtonClick() {
+            window.location.href = "../pages/loading_page.html";
+        }
+    </script>
+</body>
+</html>
