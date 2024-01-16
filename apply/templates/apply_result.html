@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>모의지원 결과</title>
+    <title>Apply Result</title>
 </head>
 <body>
     <h1>Apply Result</h1>
@@ -15,7 +15,7 @@
             <thead>
                 <tr>
                     <th>User</th>
-                    <th>1st Rank</th>
+                    <th>Rank</th>
                     <th>Competition Rate</th>
                 </tr>
             </thead>
@@ -31,17 +31,17 @@
                             {% endif %}
                         </td>
                         <td>
-                            {% if user_data.competition_rate is not None %}
+                            {% if user_data.competition_rate %}
                                 {{ user_data.competition_rate }}%
                             {% else %}
                                 No Competition Rate
                             {% endif %}
                         </td>
+                        
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-
     {% endfor %}
 </body>
 </html>

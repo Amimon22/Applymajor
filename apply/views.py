@@ -8,7 +8,7 @@ from django.utils import timezone
 from .models import Source, Academic, Course, Major, Grade, Choice, User_apply_profile
 from django.http import HttpRequest
 from apply.forms import MajorSelectionForm
-from apply.models import Academic, Choice
+from apply.models import Academic, Choice, UserPriorChoice
 
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -213,37 +213,50 @@ def validate_and_get_decimal(value, min_value, max_value):
         return None
     
 class Apply_result(View):
+    template_name = 'apply_result.html'
+
     def get(self, request):
-        users = User_apply_profile.objects.all()
         majors = Major.objects.all()
-        
+
         competition_data = []
-        
+
         for major in majors:
             model_data = {'major': major, 'user_data': []}
 
-            for user_profile in users:
-                rank = user_profile.get_1st_priority_rank(major)
-                competition_rate = user_profile.calculate_competition_rate(major)
-                username = user_profile.get_username()
+            for priority in range(1, 5):
+                choices = Choice.objects.filter(major=major, priority=priority)
+                for choice in choices:
+                    user_profile = choice.user_apply_profile
+                    rank = user_profile.get_priority_rank(major, priority)
+                    username = user_profile.user.username
 
-                user_data = {
-                    'user': user_profile.user,
-                    'rank': rank,
-                    'competition_rate': competition_rate,
-                }
+                    if rank is not None:
+                        competition_rate = user_profile.calculate_competition_rate_for_priority(major, rank)
+                    else:
+                        competition_rate = None
 
-                model_data['user_data'].append(user_data)
+                    user_data = {
+                        'user': user_profile.user,
+                        'rank': rank,
+                        'competition_rate': competition_rate,
+                    }
+
+                    model_data['user_data'].append(user_data)
+
+                # Calculate and add competition rates
+                competition_rates = [user_data['competition_rate'] for user_data in model_data['user_data']]
+                model_data['competition_rates'] = competition_rates
 
             competition_data.append(model_data)
 
-        return render(request, 'apply_result.html', {'competition_data': competition_data})
+        context = {'competition_data': competition_data}
+        return render(request, self.template_name, context)
 
 def select_major(request):
     academic_profile = Academic.objects.get(user=request.user)
     user_apply_profile = academic_profile.user.user_apply_profile
     form = MajorSelectionForm(request.POST or None, instance=user_apply_profile)
-
+    
     if request.method == 'POST':
         if form.is_valid():
             # 저장 전에 해당 사용자의 선택을 모두 삭제
@@ -253,6 +266,7 @@ def select_major(request):
             for priority in range(1, 5):
                 major_choice = form.cleaned_data[f'major_choice{priority}']
                 Choice.objects.create(user=request.user, user_apply_profile=user_apply_profile, major=major_choice, priority=priority)
+                UserPriorChoice.objects.create(user=request.user, major=major_choice, priority=priority)
 
             return redirect('apply_result')  # 선택 저장 후 이동할 페이지
         else:

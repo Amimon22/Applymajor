@@ -21,6 +21,7 @@ class Major(models.Model):
     major_name = models.CharField(max_length=255)
     department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='major')
     maximum = models.PositiveIntegerField(null=True)
+    current_applicants = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return f'{self.major_name} ({self.department})'
@@ -83,6 +84,9 @@ class User_apply_profile(models.Model):
     def get_username(self):
         return self.user.username
 
+    def get_priorities(self):
+        return self.choice_set.order_by('priority').values_list('major', flat=True)
+    
     def get_1st_priority_choices(self):
         return self.choice_set.filter(priority=1)
 
@@ -92,15 +96,35 @@ class User_apply_profile(models.Model):
 
         return rank.priority if rank else None
     
-    def calculate_competition_rate(self, major):
-        total_users = User_apply_profile.objects.filter(major_choices=major).count()
-
+    def get_priority_rank(self, major, priority):
+        """
+        특정 전공과 우선순위에 해당하는 지망 순위를 반환합니다.
+        """
+        try:
+            choice = self.choice_set.get(major=major, priority=priority)
+            return choice.get_rank()
+        except Choice.DoesNotExist:
+            return None
+    
+    def calculate_competition_rate_for_priority(self, major, priority):
         major_capacity = major.maximum if major.maximum is not None else 0
 
-        competition_rate = (total_users / major_capacity) * 100 if major_capacity != 0 else 0
-        
-        return competition_rate
+        users_with_same_priority = User_apply_profile.objects.filter(
+            major_choices=major,
+            choice__priority=priority,
+            choice__major=major
+        ).count()
 
+        competition_rate = (users_with_same_priority / major_capacity) * 100 if major_capacity != 0 else 0
+
+        return competition_rate
+    
+    def calculate_competition_rates(self, major):
+        competition_rates = {}
+        for priority in range(1, 5):
+            competition_rates[priority] = self.calculate_competition_rate_for_priority(major, priority)
+        return competition_rates
+        
 class Choice(models.Model):
     PRIORITY_CHOICES = (
         (1, '1순위'),
@@ -115,3 +139,28 @@ class Choice(models.Model):
 
     class Meta:
         unique_together = ['user', 'priority']
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        self.major.current_applicants = self.user_apply_profile.major_choices.count()
+        self.major.save()
+
+    def get_rank(self):
+        """
+        현재 Choice의 우선순위를 반환합니다.
+        """
+        return self.priority
+
+#이전에 선택한 지망 저장, 남은 변경가능 횟수 저장
+class UserPriorChoice(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    major = models.ForeignKey('Major', on_delete=models.CASCADE)
+    priority = models.PositiveIntegerField(choices=Choice.PRIORITY_CHOICES)
+    change_count = models.PositiveIntegerField(default=3)  # 변경 가능 횟수
+    timestamp = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ['-timestamp']
+
+    def __str__(self):
+        return f"{self.user.username} - {self.major} - Priority {self.priority}"
