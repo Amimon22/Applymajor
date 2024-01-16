@@ -2,402 +2,128 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/mypage_check.css">
         <title>MypageCheck</title>
-        <style>
-            body {
-                background-color : #FFF;
-                font-family: SF Pro;
-            }
-            header { 
-                position : absolute;
-                top: 47px; left: 0px;
-                background-color : #FFF;
-                width: 390px;
-                height: 56px;
-                /*box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05); */
-            }
-            strong {
-                position : absolute;
-                top: 17px; left: 169px;
-                color: #2C2C2C;
-                text-align: center;
-                font-family: SF Pro Text;
-                font-size: 18px;
-                letter-spacing: -0.408px;
-            } 
-            #m1 {
-                position : absolute;
-                top: 17px; left: 15.88px;
-                right : 0px;            
-                box-sizing: border-box
-            }
-            .menu-icon {
-                position : absolute;
-                top: 17px; left: 347.63px;            
-                cursor: pointer;
-                display: inline-block;
-            }
-            .menu-icon div {
-                width: 30px;
-                height: 4px;
-                position : absolute;
-                top: 17px; left: 347.63px;    
-                margin: 6px 0;
-                transition: 0.4s;
-            }
-            .overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.32); /* 어두운 배경 색상 및 투명도 조절 */
-                z-index: 1;
-            }
-            .drawer {
-                position: absolute;
-                height: 790px;
-                width: 0;
-                z-index: 2;
-                top: 0px;
-                right: 50px;
-                background-color: #FFF;
-                overflow-x: hidden;
-                transition: 0.5s;
-                padding-top: 60px;
-            }
-     
-            .drawer a {
-                padding: 15px 32px;
-                text-decoration: none;
-                font-weight: bold;
-                font-size: 16px;
-                color: #535353;
-                display: block;
-                transition: 0.3s;
-            }
-    
-            .drawer a:hover {
-                color: #f1f1f1;
-            }
-    
-            #x {
-                position: absolute;
-                top: 63px; left: 72px;
-                width: 24px;
-                height: 24px;
-                color: #FFF ;
-                cursor: pointer;
-                padding: 0;
-                margin: 0;
-            }
-            #person {
-                position: absolute;
-                top: 112px; left: 35px;
-                color: #535353;
-                font-family: SF Pro;
-                font-size: 18px;
-                font-style: normal;
-                font-weight: 510;
-                line-height: 22px;
-            }
-            #mypage {
-                position: absolute;
-                top: 147.33px; left: 30.33px;
-                color: #535353;
-                font-family: SF Pro;
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 22px;
-                padding: 0;
-            }
-            #main {
-                position: absolute;
-                top: 147px; left: 176px;
-                color: #535353;
-                font-family: SF Pro;
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 0px;
-                padding: 0;
-            }
-            #go {
-                position: absolute;
-                right: 47px;
-                color: #8B8B8B;
-                font-family: SF Pro;
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 22px;
-                transition: 0.5s;
-                display: inline-block;
-            }
-            #go-icon1 {
-                position: absolute;
-                top: 340px; right: 19px;
-                display: inline-block;
-            }
-            #go-icon2 {
-                position: absolute;
-                top: 371px; right: 19px;
-                display: inline-block;
-            }
-            #go-icon3 {
-                position: absolute;
-                top: 402px; right: 19px;
-                display: inline-block;
-            }
-            #menu-cal {
-                position: absolute;
-                top: 195px; left: 29px;
-                margin-top: 4%;
-            }
-            #menu-apply {
-                position: absolute;
-                top: 255px; left: 29px;
-            }
-            #NumberRectangle {
-                position: absolute;
-                top: 112px; left: 30px;
-                width: 332px;
-                height: 108px;
-                background-color: #7B61FF;
-                border-radius: 18px;
-                display: inline-block;
-            }
-            .circle {
-                position: absolute;
-                top: 146px; left: 59px;
-                width: 35px;
-                height: 35px;
-                background-color: #FFFFFF;
-                border-radius: 50%;
-            }
-            #PersonIcon {
-                position: absolute;
-                top: 149.5px; left: 62.75px;
-            }
-            .Bold {
-                position: absolute;
-                font-style: normal;
-                font-size: 18px;
-                text-align: center;
-                font-weight: 590;
-                line-height: 22px;
-            }
-            #Number {
-                top: 141px; left: 117px;
-                color: #FFF;
-            }
-            #chance {
-                position: absolute;
-                top: 168px; left: 117px;
-                color: #EFEFEF;
-                text-align: center;
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 510;
-                line-height: 22px;
-                letter-spacing: -0.408px;
-            }
-            #myinfo {
-                top: 244px; left: 39px;
-                color: #2C2C2C;
-                letter-spacing: -0.408px;
-            }
-            #InfoRectangle {
-                position: absolute;
-                top: 280px; left: 30px;
-                width: 332px;
-                height: 355px;
-                border-radius: 18px;
-                border: 2px solid #9581FF;
-                display: inline-block;
-            }
-            #ul1 {
-                position: absolute;
-                top: 294px; left: 36px; /*임의수정*/
-                color: #535353;
-                font-feature-settings: 'clig' off, 'liga' off;
-                font-size: 15px;
-                font-style: normal;
-                font-weight: 590;
-                line-height: 37px;
-                display: inline-block;
-            }
-            #ul2 {
-                position: absolute;
-                top: 530px; left: 36px; /*임의수정*/
-                color: #535353;
-                font-feature-settings: 'clig' off, 'liga' off;
-                font-size: 15px;
-                font-style: normal;
-                font-weight: 590;
-                line-height: 37px;
-                display: inline-block;
-            }
-            .li {
-                position: absolute;
-                color: #7B61FF;
-                font-feature-settings: 'clig' off, 'liga' off;
-                display: inline-block;
-                font-size: 15px;
-                font-style: normal;
-                font-weight: 590;
-                line-height: 37px;
-                margin: 0%; padding: 0%;
-                white-space: nowrap;
-            }
-            #li1 {
-                top: 0px; left: 119px;
-            }
-            #li2 {
-                top: 37px; left: 137px;
-            }
-            #li3 {
-                top: 73px; left: 119px;
-            }
-            #li4 {
-                top: 145px; left: 58px;
-                line-height: 29px;
-            }
-            #li5 {
-                top: 0px; left: 165px;
-            }
-            #li6 {
-                top: 37px; left: 147px;
-            }
-            #passwordReset {
-                position: absolute;
-                top: 658px; left: 249px;
-                color: #535353;
-                text-align: center;
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 22px;
-                letter-spacing: -0.408px;
-                text-decoration-line: underline;
-            }
-        </style>
     </head>
     <body>
-        <header>
-            <span id="m1"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                <mask id="mask0_108_1777" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
-                <rect x="0.877808" width="23.8168" height="24" fill="#D9D9D9"/>
-                </mask>
-                <g mask="url(#mask0_108_1777)">
-                <path d="M16.5132 22L6.66528 12L16.5132 2L18.2612 3.775L10.1613 12L18.2612 20.225L16.5132 22Z" fill="#2C2C2C"/>
-                </g>
-                </svg></span>
-            <strong>내 정보</strong>
-            <div class="menu-icon" onclick="toggleDrawer()"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                <mask id="mask0_108_1774" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
-                  <rect width="23.635" height="24" fill="#D9D9D9"/>
-                </mask>
-                <g mask="url(#mask0_108_1774)">
-                  <path d="M3.58563 18V16H21.3119V18H3.58563ZM3.58563 13V11H21.3119V13H3.58563ZM3.58563 8V6H21.3119V8H3.58563Z" fill="#2C2C2C"/>
-                </g>
-              </svg>
-              <div></div>
-              <div></div>
-              <div></div>
+        <article>
+            <header>
+                <span id="m1" onclick="backClick()"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                    <mask id="mask0_108_1777" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
+                    <rect x="0.877808" width="23.8168" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_108_1777)">
+                    <path d="M16.5132 22L6.66528 12L16.5132 2L18.2612 3.775L10.1613 12L18.2612 20.225L16.5132 22Z" fill="#2C2C2C"/>
+                    </g>
+                    </svg></span>
+                <strong>내 정보</strong>
+                <div class="menu-icon" onclick="toggleDrawer()"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                    <mask id="mask0_108_1774" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
+                      <rect width="23.635" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_108_1774)">
+                      <path d="M3.58563 18V16H21.3119V18H3.58563ZM3.58563 13V11H21.3119V13H3.58563ZM3.58563 8V6H21.3119V8H3.58563Z" fill="#2C2C2C"/>
+                    </g>
+                  </svg>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+            </header>
+    
+            <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+    
+            <div class="drawer" id="drawer">
+                <a href="#" onclick="closeDrawer()" id="x"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <mask id="mask0_184_1544" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                      <rect width="24" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_184_1544)">
+                      <path d="M6.39996 18.3077L5.69226 17.6L11.2923 12L5.69226 6.39996L6.39996 5.69226L12 11.2923L17.6 5.69226L18.3077 6.39996L12.7077 12L18.3077 17.6L17.6 18.3077L12 12.7077L6.39996 18.3077Z" fill="#535353"/>
+                    </g>
+                  </svg>
+                </a>
+                <div id="person">20230000</div>
+                <a id="mypage" href="./y_mypage_main.html"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M6.99992 6.99992C6.08325 6.99992 5.29853 6.67353 4.64575 6.02075C3.99297 5.36797 3.66659 4.58325 3.66659 3.66659C3.66659 2.74992 3.99297 1.9652 4.64575 1.31242C5.29853 0.659641 6.08325 0.333252 6.99992 0.333252C7.91659 0.333252 8.70131 0.659641 9.35409 1.31242C10.0069 1.9652 10.3333 2.74992 10.3333 3.66659C10.3333 4.58325 10.0069 5.36797 9.35409 6.02075C8.70131 6.67353 7.91659 6.99992 6.99992 6.99992ZM0.333252 13.6666V11.3333C0.333252 10.861 0.45478 10.427 0.697835 10.0312C0.940891 9.63534 1.26381 9.33325 1.66659 9.12492C2.5277 8.69436 3.4027 8.37145 4.29159 8.15617C5.18047 7.94089 6.08325 7.83325 6.99992 7.83325C7.91659 7.83325 8.81936 7.94089 9.70825 8.15617C10.5971 8.37145 11.4721 8.69436 12.3333 9.12492C12.736 9.33325 13.0589 9.63534 13.302 10.0312C13.5451 10.427 13.6666 10.861 13.6666 11.3333V13.6666H0.333252Z" fill="#7B61FF"/>
+                  </svg>&nbsp;&nbsp;마이페이지</a>
+                <a id="main" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M0.333252 15.5V5.5L6.99992 0.5L13.6666 5.5V15.5H8.66659V9.66667H5.33325V15.5H0.333252Z" fill="#7B61FF"/>
+                  </svg>&nbsp;&nbsp;홈 화면</a>
+                <br><br><br>
+                <hr id="hr1" color="E9E9EB">
+                <a href="#"><p id="menu-cal">전공 선택 점수 계산기</p></a><br><hr id="hr2" color="E9E9EB">
+                <a href="#"><p id="menu-apply">모의 지원</p></a><br><hr id="hr3" color="E9E9EB">
+                <a href="https://www.duksung.ac.kr/main.do"><p id="go1">덕성여자대학교 홈페이지</p><p id="go-icon1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
+                      <rect width="22" height="22" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_184_1534)">
+                      <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
+                    </g>
+                  </svg></p></a>
+                <a href="https://sso.duksung.ac.kr/svc/tk/Auth.do?ac=Y&ifa=N&id=portal&"><p id="go2">덕성여자대학교 포털</p><p id="go-icon2"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
+                      <rect width="22" height="22" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_184_1534)">
+                      <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
+                    </g>
+                  </svg></p></a>
+                <a href="https://delight.duksung.ac.kr/ko/program"><p id="go3">덕성여자대학교 딜라이트</p><p id="go-icon3"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
+                      <rect width="22" height="22" fill="#D 9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_184_1534)">
+                      <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
+                    </g>
+                  </svg></p></a>
             </div>
-        </header>
-
-        <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
-
-        <div class="drawer" id="drawer">
-            <a href="#" onclick="closeDrawer()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <mask id="mask0_184_1544" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                  <rect width="24" height="24" fill="#D9D9D9"/>
-                </mask>
-                <g mask="url(#mask0_184_1544)">
-                  <path d="M6.39996 18.3077L5.69226 17.6L11.2923 12L5.69226 6.39996L6.39996 5.69226L12 11.2923L17.6 5.69226L18.3077 6.39996L12.7077 12L18.3077 17.6L17.6 18.3077L12 12.7077L6.39996 18.3077Z" fill="#535353"/>
-                </g>
-              </svg>
-            </a>
-            <div id="person">20230000</div>
-            <a id="mypage" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M6.99992 6.99992C6.08325 6.99992 5.29853 6.67353 4.64575 6.02075C3.99297 5.36797 3.66659 4.58325 3.66659 3.66659C3.66659 2.74992 3.99297 1.9652 4.64575 1.31242C5.29853 0.659641 6.08325 0.333252 6.99992 0.333252C7.91659 0.333252 8.70131 0.659641 9.35409 1.31242C10.0069 1.9652 10.3333 2.74992 10.3333 3.66659C10.3333 4.58325 10.0069 5.36797 9.35409 6.02075C8.70131 6.67353 7.91659 6.99992 6.99992 6.99992ZM0.333252 13.6666V11.3333C0.333252 10.861 0.45478 10.427 0.697835 10.0312C0.940891 9.63534 1.26381 9.33325 1.66659 9.12492C2.5277 8.69436 3.4027 8.37145 4.29159 8.15617C5.18047 7.94089 6.08325 7.83325 6.99992 7.83325C7.91659 7.83325 8.81936 7.94089 9.70825 8.15617C10.5971 8.37145 11.4721 8.69436 12.3333 9.12492C12.736 9.33325 13.0589 9.63534 13.302 10.0312C13.5451 10.427 13.6666 10.861 13.6666 11.3333V13.6666H0.333252Z" fill="#7B61FF"/>
-              </svg>&nbsp;&nbsp;마이페이지</a>
-            <a id="main" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M0.333252 15.5V5.5L6.99992 0.5L13.6666 5.5V15.5H8.66659V9.66667H5.33325V15.5H0.333252Z" fill="#7B61FF"/>
-              </svg>&nbsp;&nbsp;홈 화면</a>
-            <br><br><br>
-            <hr color="#E9E9EB">
-            <a href="#"><p id="menu-cal">전공 선택 점수 계산기</p></a><br><hr color="#E9E9EB">
-            <a href="#"><p id="menu-apply">모의 지원</p></a><br><hr color="#E9E9EB">
-            <a href="#"><p id="go">덕성여자대학교 홈페이지</p><p id="go-icon1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
-                  <rect width="22" height="22" fill="#D9D9D9"/>
-                </mask>
-                <g mask="url(#mask0_184_1534)">
-                  <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
-                </g>
-              </svg></p></a>
-            <a href="#"><p id="go">덕성여자대학교 포털</p><p id="go-icon2"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
-                  <rect width="22" height="22" fill="#D9D9D9"/>
-                </mask>
-                <g mask="url(#mask0_184_1534)">
-                  <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
-                </g>
-              </svg></p></a>
-            <a href="#"><p id="go">덕성여자대학교 딜라이트</p><p id="go-icon3"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <mask id="mask0_184_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
-                  <rect width="22" height="22" fill="#D 9D9D9"/>
-                </mask>
-                <g mask="url(#mask0_184_1534)">
-                  <path d="M5.76968 16.1738L4.8125 15.2166L13.8329 6.18746H5.63221V4.8125H16.1738V15.3541H14.7989V7.15346L5.76968 16.1738Z" fill="#C8C8C8"/>
-                </g>
-              </svg></p></a>
-        </div>
-        <div id="NumberRectangle"></div>
-        <div class="circle"></div>
-        <svg id="PersonIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
-            <path d="M9.76872 17.6289C9.28576 17.6289 8.87754 17.4609 8.54407 17.1248C8.2106 16.7888 8.04386 16.3774 8.04386 15.8908C8.04386 15.4041 8.2106 14.9927 8.54407 14.6567C8.87754 14.3206 9.28576 14.1526 9.76872 14.1526C10.2517 14.1526 10.6599 14.3206 10.9934 14.6567C11.3268 14.9927 11.4936 15.4041 11.4936 15.8908C11.4936 16.3774 11.3268 16.7888 10.9934 17.1248C10.6599 17.4609 10.2517 17.6289 9.76872 17.6289ZM18.0481 17.6289C17.5651 17.6289 17.1569 17.4609 16.8234 17.1248C16.4899 16.7888 16.3232 16.3774 16.3232 15.8908C16.3232 15.4041 16.4899 14.9927 16.8234 14.6567C17.1569 14.3206 17.5651 14.1526 18.0481 14.1526C18.531 14.1526 18.9392 14.3206 19.2727 14.6567C19.6062 14.9927 19.7729 15.4041 19.7729 15.8908C19.7729 16.3774 19.6062 16.7888 19.2727 17.1248C18.9392 17.4609 18.531 17.6289 18.0481 17.6289ZM13.9084 25.6243C16.9901 25.6243 19.6004 24.5466 21.7393 22.3914C23.8781 20.2361 24.9475 17.6057 24.9475 14.5003C24.9475 13.9441 24.913 13.4052 24.844 12.8838C24.775 12.3624 24.6485 11.8583 24.4645 11.3716C23.9816 11.4875 23.4986 11.5744 23.0157 11.6323C22.5327 11.6903 22.0267 11.7192 21.4978 11.7192C19.4049 11.7192 17.4271 11.2673 15.5643 10.3635C13.7014 9.45968 12.1145 8.19664 10.8036 6.57438C10.0677 8.38204 9.01553 9.95215 7.64714 11.2847C6.27875 12.6173 4.68613 13.6196 2.86928 14.2917V14.5003C2.86928 17.6057 3.93869 20.2361 6.07752 22.3914C8.21635 24.5466 10.8266 25.6243 13.9084 25.6243ZM13.9084 28.4053C11.9995 28.4053 10.2057 28.0403 8.52682 27.3103C6.84796 26.5803 5.38757 25.5895 4.14567 24.3381C2.90377 23.0866 1.9206 21.615 1.19616 19.9232C0.471718 18.2314 0.109497 16.4238 0.109497 14.5003C0.109497 12.5767 0.471718 10.7691 1.19616 9.07729C1.9206 7.38551 2.90377 5.91389 4.14567 4.66244C5.38757 3.41098 6.84796 2.42025 8.52682 1.69024C10.2057 0.960222 11.9995 0.595215 13.9084 0.595215C15.8172 0.595215 17.6111 0.960222 19.29 1.69024C20.9688 2.42025 22.4292 3.41098 23.6711 4.66244C24.913 5.91389 25.8962 7.38551 26.6206 9.07729C27.3451 10.7691 27.7073 12.5767 27.7073 14.5003C27.7073 16.4238 27.3451 18.2314 26.6206 19.9232C25.8962 21.615 24.913 23.0866 23.6711 24.3381C22.4292 25.5895 20.9688 26.5803 19.29 27.3103C17.6111 28.0403 15.8172 28.4053 13.9084 28.4053ZM12.0455 3.55004C13.0115 5.17229 14.3224 6.47589 15.9782 7.46083C17.6341 8.44577 19.4739 8.93824 21.4978 8.93824C21.8198 8.93824 22.1302 8.92086 22.4292 8.88609C22.7282 8.85133 23.0387 8.81078 23.3606 8.76443C22.3947 7.14217 21.0838 5.83857 19.4279 4.85363C17.7721 3.86869 15.9322 3.37622 13.9084 3.37622C13.5864 3.37622 13.2759 3.3936 12.977 3.42837C12.678 3.46313 12.3675 3.50369 12.0455 3.55004ZM3.45573 10.9892C4.62863 10.3172 5.65205 9.44809 6.52598 8.38204C7.39991 7.31598 8.05536 6.12247 8.49233 4.80149C7.31942 5.47357 6.296 6.34263 5.42207 7.40868C4.54814 8.47474 3.89269 9.66825 3.45573 10.9892Z" fill="#9581FF"/>
-        </svg>
-        <div id="Number" class="Bold">20230000</div>
-        <div id="chance">남은 지원 횟수 :  회</div>
-        <div id="myinfo" class="Bold">나의 인증된 정보</div>
-        <div id="InfoRectangle"></div>
-        <ul id="ul1">
-            <li>소속 학부&nbsp;&nbsp;<p id="li1" class="li">과학기술대학</p></li>
-            <li>총 이수 학점&nbsp;&nbsp;<p id="li2" class="li">36 학점</p></li>
-            <li>전체 평점&nbsp;&nbsp;<p id="li3" class="li">3.50</p></li>
-            <li>전공탐색 과목을 수강한 전공&nbsp;&nbsp;<br><p id="li4" class="li">디지털소프트웨어공학전공<br>화학전공<br>바이오공학전공</p></li>
-        </ul>
-        <ul id="ul2">
-            <li>비교과 활동 점수&nbsp;&nbsp;<p id="li5" class="li">200 점</p></li>
-            <li>지도교수 상담&nbsp;&nbsp;<p id="li6" class="li">100 점(4 회 완료)</p></li>
-        </ul>
-        <a href="#"><div id="passwordReset">비밀번호 재설정</div></a>
-        <script>
-            function toggleDrawer() {
-                var drawer = document.getElementById('drawer');
-                var overlay = document.getElementById('overlay');
-
-                if (drawer.style.width === '334px') {
+            <div id="NumberRectangle"></div>
+            <div class="circle"></div>
+            <svg id="PersonIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
+                <path d="M9.76872 17.6289C9.28576 17.6289 8.87754 17.4609 8.54407 17.1248C8.2106 16.7888 8.04386 16.3774 8.04386 15.8908C8.04386 15.4041 8.2106 14.9927 8.54407 14.6567C8.87754 14.3206 9.28576 14.1526 9.76872 14.1526C10.2517 14.1526 10.6599 14.3206 10.9934 14.6567C11.3268 14.9927 11.4936 15.4041 11.4936 15.8908C11.4936 16.3774 11.3268 16.7888 10.9934 17.1248C10.6599 17.4609 10.2517 17.6289 9.76872 17.6289ZM18.0481 17.6289C17.5651 17.6289 17.1569 17.4609 16.8234 17.1248C16.4899 16.7888 16.3232 16.3774 16.3232 15.8908C16.3232 15.4041 16.4899 14.9927 16.8234 14.6567C17.1569 14.3206 17.5651 14.1526 18.0481 14.1526C18.531 14.1526 18.9392 14.3206 19.2727 14.6567C19.6062 14.9927 19.7729 15.4041 19.7729 15.8908C19.7729 16.3774 19.6062 16.7888 19.2727 17.1248C18.9392 17.4609 18.531 17.6289 18.0481 17.6289ZM13.9084 25.6243C16.9901 25.6243 19.6004 24.5466 21.7393 22.3914C23.8781 20.2361 24.9475 17.6057 24.9475 14.5003C24.9475 13.9441 24.913 13.4052 24.844 12.8838C24.775 12.3624 24.6485 11.8583 24.4645 11.3716C23.9816 11.4875 23.4986 11.5744 23.0157 11.6323C22.5327 11.6903 22.0267 11.7192 21.4978 11.7192C19.4049 11.7192 17.4271 11.2673 15.5643 10.3635C13.7014 9.45968 12.1145 8.19664 10.8036 6.57438C10.0677 8.38204 9.01553 9.95215 7.64714 11.2847C6.27875 12.6173 4.68613 13.6196 2.86928 14.2917V14.5003C2.86928 17.6057 3.93869 20.2361 6.07752 22.3914C8.21635 24.5466 10.8266 25.6243 13.9084 25.6243ZM13.9084 28.4053C11.9995 28.4053 10.2057 28.0403 8.52682 27.3103C6.84796 26.5803 5.38757 25.5895 4.14567 24.3381C2.90377 23.0866 1.9206 21.615 1.19616 19.9232C0.471718 18.2314 0.109497 16.4238 0.109497 14.5003C0.109497 12.5767 0.471718 10.7691 1.19616 9.07729C1.9206 7.38551 2.90377 5.91389 4.14567 4.66244C5.38757 3.41098 6.84796 2.42025 8.52682 1.69024C10.2057 0.960222 11.9995 0.595215 13.9084 0.595215C15.8172 0.595215 17.6111 0.960222 19.29 1.69024C20.9688 2.42025 22.4292 3.41098 23.6711 4.66244C24.913 5.91389 25.8962 7.38551 26.6206 9.07729C27.3451 10.7691 27.7073 12.5767 27.7073 14.5003C27.7073 16.4238 27.3451 18.2314 26.6206 19.9232C25.8962 21.615 24.913 23.0866 23.6711 24.3381C22.4292 25.5895 20.9688 26.5803 19.29 27.3103C17.6111 28.0403 15.8172 28.4053 13.9084 28.4053ZM12.0455 3.55004C13.0115 5.17229 14.3224 6.47589 15.9782 7.46083C17.6341 8.44577 19.4739 8.93824 21.4978 8.93824C21.8198 8.93824 22.1302 8.92086 22.4292 8.88609C22.7282 8.85133 23.0387 8.81078 23.3606 8.76443C22.3947 7.14217 21.0838 5.83857 19.4279 4.85363C17.7721 3.86869 15.9322 3.37622 13.9084 3.37622C13.5864 3.37622 13.2759 3.3936 12.977 3.42837C12.678 3.46313 12.3675 3.50369 12.0455 3.55004ZM3.45573 10.9892C4.62863 10.3172 5.65205 9.44809 6.52598 8.38204C7.39991 7.31598 8.05536 6.12247 8.49233 4.80149C7.31942 5.47357 6.296 6.34263 5.42207 7.40868C4.54814 8.47474 3.89269 9.66825 3.45573 10.9892Z" fill="#9581FF"/>
+            </svg>
+            <div id="Number" class="Bold">20230000</div>
+            <div id="chance">남은 지원 횟수 :  회</div>
+            <div id="myinfo" class="Bold">나의 인증된 정보</div>
+            <div id="InfoRectangle"></div>
+            <ul id="ul1">
+                <li>소속 학부&nbsp;&nbsp;<p id="li1" class="li">과학기술대학</p></li>
+                <li>총 이수 학점&nbsp;&nbsp;<p id="li2" class="li">36 학점</p></li>
+                <li>전체 평점&nbsp;&nbsp;<p id="li3" class="li">3.50</p></li>
+                <li>전공탐색 과목을 수강한 전공&nbsp;&nbsp;<br><p id="li4" class="li">디지털소프트웨어공학전공<br>화학전공<br>바이오공학전공</p></li>
+            </ul>
+            <ul id="ul2">
+                <li>비교과 활동 점수&nbsp;&nbsp;<p id="li5" class="li">200 점</p></li>
+                <li>지도교수 상담&nbsp;&nbsp;<p id="li6" class="li">100 점(4 회 완료)</p></li>
+            </ul>
+            <a href="./y_mypage_reset_rerere.html"><div id="passwordReset">비밀번호 재설정</div></a>
+            <script>
+                function backClick(){      //메뉴바 + 드로어 코드
+                    window.location.href = "./y_mypage_main.html";
+                }
+                function toggleDrawer() {
+                    var drawer = document.getElementById('drawer');
+                    var overlay = document.getElementById('overlay');
+    
+                    if (drawer.style.width === '334px') {
+                        drawer.style.width = '0';
+                        overlay.style.display = 'none';
+                    } else {
+                        drawer.style.width = '334px';
+                        overlay.style.display = 'block';
+                    }
+                }
+            
+                function closeDrawer() {
+                    var drawer = document.getElementById('drawer');
+                    var overlay = document.getElementById('overlay');
+    
                     drawer.style.width = '0';
                     overlay.style.display = 'none';
-                } else {
-                    drawer.style.width = '334px';
-                    overlay.style.display = 'block';
                 }
-            }
-        
-            function closeDrawer() {
-                var drawer = document.getElementById('drawer');
-                var overlay = document.getElementById('overlay');
-
-                drawer.style.width = '0';
-                overlay.style.display = 'none';
-            }
-        </script>
+            </script>
+        </article>
     </body>
+</html>
