@@ -70,10 +70,10 @@ class Course(models.Model):
     
 class Grade(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    grades1 = models.DecimalField(max_digits=6, decimal_places=5, null=True)
-    grades2 = models.DecimalField(max_digits=6, decimal_places=5, null=True)
-    course_credits1 = models.IntegerField(null=True, validators=[MinValueValidator(0), MaxValueValidator(3),])
-    course_credits2 = models.IntegerField(null=True, validators=[MinValueValidator(0), MaxValueValidator(3),])
+    grades1 = models.DecimalField(max_digits=6, decimal_places=5, null=True, validators=[MinValueValidator(0), MaxValueValidator(4.5)])
+    grades2 = models.DecimalField(max_digits=6, decimal_places=5, null=True, validators=[MinValueValidator(0), MaxValueValidator(4.5)])
+    course_credits1 = models.IntegerField(null=True, validators=[MinValueValidator(0), MaxValueValidator(24)])
+    course_credits2 = models.IntegerField(null=True, validators=[MinValueValidator(0), MaxValueValidator(24)])
     
 
 class User_apply_profile(models.Model):

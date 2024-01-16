@@ -94,6 +94,10 @@ def ocr_read(request: HttpRequest, category: int):
                         course_credits2=course_credits[1]
                     )
                     grade_instance.save()
+                    
+                # User_apply_profile 인스턴스 생성 및 데이터베이스에 저장
+                user_apply_profile_instance = User_apply_profile.objects.create(user=user_instance)
+                user_apply_profile_instance.save()
             
     context['imgname'] = imgname
     context['resulttext'] = resulttext.replace(" ","")
@@ -170,21 +174,25 @@ def extract_grades(resulttext):
     if index_2nd_semester > 2:
         grades[1] = resulttext[index_2nd_semester : index_2nd_semester + 6]
 
-    print(grades)
+    # print(grades)
     return grades
 
 def extract_course_credits(resulttext):
     course_credits = [None, None]  # Initialize course_credits list
 
-    # Extracting course credits for 1st semester
     index_1st_semester = resulttext.find('1학기') + 3
     if index_1st_semester > 2:
-        course_credits[0] = int(resulttext[index_1st_semester + 2 : index_1st_semester + 4])
+        credits_str = resulttext[index_1st_semester + 2 : index_1st_semester + 4].strip()
 
-    # Extracting course credits for 2nd semester
+        if credits_str:
+            course_credits[0] = int(credits_str)
+
     index_2nd_semester = resulttext.find('2학기') + 3
     if index_2nd_semester > 2:
-        course_credits[1] = int(resulttext[index_2nd_semester + 2 : index_2nd_semester + 4])
+        credits_str = resulttext[index_2nd_semester + 2 : index_2nd_semester + 4].strip()
+
+        if credits_str:
+            course_credits[1] = int(credits_str)
 
     print(course_credits)
     return course_credits
