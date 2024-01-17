@@ -40,7 +40,7 @@ def user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('success')  # 로그인 성공 시 리다이렉트할 URL
+            return redirect('mypage')  # 로그인 성공 시 리다이렉트할 URL
         else:
             error_message = '아이디 또는 비밀번호가 올바르지 않습니다.'
             return render(request, 'login.html', {'error_message': error_message})
@@ -48,8 +48,8 @@ def user(request):
         return render(request, 'login.html')
 
 #로그인 성공 페이지로 가기위함
-def login_success(request):
-    return render(request, 'login_success.html')
+def mypage(request):
+    return render(request, 'mypage.html')
 
 
 #비밀번호 변경 코드
@@ -101,13 +101,30 @@ def logout_success(request):
     return render(request, 'logout_success.html')
 
 #마이페이지 
-@login_required  # 로그인한 사용자만 접근 가능하도록 설정
-def mypage(request):
-    user_profile = UserProfile.objects.get(user=request.user)
-    return render(request, 'mypage.html', {'user_profile' : user_profile})
+#@login_required  # 로그인한 사용자만 접근 가능하도록 설정
+#def mypage(request):
+#    user_profile = UserProfile.objects.get(username=request.user.username)
+#    return render(request, 'user/mypage.html', {'user_profile' : user_profile})
 
 #apply에 models.py에 있는 User_apply_profile 클래스 데이터 가져오기 
 def mypage_view(request):
-    #User_apply_profile 데이터 가져오기
-    apply_data = User_apply_profile.objects.all()  # 또는 필요한 쿼리를 사용하여 데이터를 가져옴
+    # 현재 로그인된 사용자의 활동 기록을 불러옴
+    apply_data = User_apply_profile.objects.filter(user=request.user).order_by('-timestamp')
+    
     return render(request, 'user/mypage.html', {'apply_data': apply_data})
+
+
+from django.shortcuts import render, redirect
+from .models import UserProfile
+
+def create_user_profile(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        certification = request.POST.get('certification')
+
+        # 데이터로 모델 인스턴스 생성
+        user_profile = UserProfile.objects.create(username=username, password=password, certification=certification)
+        return redirect('mypage')  # 성공 페이지로 이동
+
+    return render(request, 'user/mypage.html')
