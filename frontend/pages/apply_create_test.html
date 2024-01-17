@@ -1,9 +1,8 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/majorselect2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/majorselect.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>start</title>
     <title>information_page</title>
@@ -103,37 +102,52 @@
                 </g>
                 </svg></p></a>
         </div>
-
-        <div class="mjselect">
-            <div class = "rect">
-                <span class="college">과학기술대학</span>
+        <form method = "POST" id="selectForm">
+            {% csrf_token %}
+            <div class="mjselect">
+                <div class = "rect">
+                    {% if academic_instance 를 불러와야해... 수정요함 %}
+                    <span class="college">{{ academic_instance.major }}</span>
+                    {% endif %}
+                </div>
+                {% for field in form %}
+                <div class="field-wrapper">
+                    <h1 for="{{ field.id_for_label }}">{{ field.label }}</h1>
+                    <select name="{{ field.name }}" id="{{ field.id_for_label }}">
+                        {% for choice in field.choices %}
+                            <option value="{{ choice.0 }}" {% if choice.0 == field.value %}selected{% endif %}>{{ choice.1 }}</option>
+                    </select>
+                    <hr />
+                </div>
+                
+                
+                <h1>1지망 전공을 선택하세요.</h1>
+                <div class="mj1">
+                    <select name="{{ field.name }}" id="{{ field.id_for_label }}"></select>
+                    <hr />
+                </div>
+                <h2>2지망 전공을 선택하세요.</h2>
+                <div class="mj2">
+                    <select name="mj2"></select>
+                    <hr />
+                </div>
+    
+                <h3>3지망 전공을 선택하세요.</h3>
+                <div class="mj3">
+                    <select name="mj3"></select>
+                    <hr />
+                </div>
+                <h4>4지망 전공을 선택하세요.</h4>
+                <div class="mj4">
+                    <select name="mj4"></select>
+                </div>
             </div>
-            <h1>1지망 전공을 선택하세요.</h1>
-            <div class="mj1">
-                <select name="mj1"></select>
-                <hr />
+            
+            <div class = "rb" onclick=resultButtonClick()>
+                <div class="bt">지원하기</div>
             </div>
-            <h2>2지망 전공을 선택하세요.</h2>
-            <div class="mj2">
-                <select name="mj2"></select>
-                <hr />
-            </div>
-
-            <h3>3지망 전공을 선택하세요.</h3>
-            <div class="mj3">
-                <select name="mj3"></select>
-                <hr />
-            </div>
-            <h4>4지망 전공을 선택하세요.</h4>
-            <div class="mj4">
-                <select name="mj4"></select>
-            </div>
-        </div>
-        
-        <div class = "rb" onclick=resultButtonClick()>
-            <div class="bt">지원하기</div>
-        </div>
-
+    
+        </form>
     </article>
     <script>
         function backClick(){
@@ -180,7 +194,7 @@
         }
         }
         function resultButtonClick() {
-            window.location.href = "../pages/loading_page.html";
+            document.getElementById('selectForm').submit();
         }
     </script>
 </body>
